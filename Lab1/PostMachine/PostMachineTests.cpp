@@ -808,9 +808,12 @@ TEST(PostMachineStepLogging) {
     machine.enableLog(true);
     machine.reset();
 
+    std::cout << "Step logging testing:\n";
     CHECK(machine.step());
+    std::cout << "\n";
 }
-int main(int, const char *[])
+
+int main()
 {
     return UnitTest::RunAllTests();
 }

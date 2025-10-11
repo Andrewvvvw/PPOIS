@@ -344,7 +344,7 @@ SUITE(StreamOperatorsTesting) {
     }
 }
 
-int main(int, const char *[])
+int main()
 {
     return UnitTest::RunAllTests();
 }

@@ -6,6 +6,7 @@
 #include <string>
 #include <iostream>
 #include <memory>
+#include <limits>
 
 enum class CommandType {
     SET_MARK,      // V - place a mark

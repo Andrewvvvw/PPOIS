@@ -6,6 +6,7 @@
 
 #include <string>
 #include <iostream>
+#include <algorithm>
 
 class BigInteger {
 private:
