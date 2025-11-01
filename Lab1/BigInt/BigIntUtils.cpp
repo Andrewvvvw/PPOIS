@@ -143,7 +143,7 @@ void BigInteger::digitsCheck(const std::string &rawDigits) {
 }
 
 /**
- * @brief Function sets isNegative for a BigInteger
+ * @brief Function sets isNegative for a BigInt
  * @param rawDigits
  */
 void BigInteger::setNegativity(std::string &rawDigits) {
