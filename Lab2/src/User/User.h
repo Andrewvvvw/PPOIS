@@ -3,12 +3,14 @@
 
 #include <string>
 #include <ctime>
+#include "../AudioCollection/AudioCollection.h"
 
 class User {
 protected:
     std::string id;
     std::string username;
     time_t registrationDate;
+    AudioCollection audioCollection;
 
 public:
     User(const std::string& id, const std::string& username);
@@ -23,6 +25,7 @@ public:
     virtual bool canUploadContent() const { return false; }
     virtual bool canComment() const { return false; }
     virtual std::string getUserType() const = 0;
+    virtual bool getIsPremium() const { return false; }
 };
 
 #endif // USER_H

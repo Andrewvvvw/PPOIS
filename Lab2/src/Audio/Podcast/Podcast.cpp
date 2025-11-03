@@ -1,6 +1,5 @@
 #include "Podcast.h"
 #include "../../User/RegisteredUser/Podcaster/Podcaster.h"
-#include <iostream>
 
 Podcast::Podcast(const std::string& title, const std::string& description, Podcaster* host,
                  const std::string& category, unsigned long long coverID,unsigned long long duration)

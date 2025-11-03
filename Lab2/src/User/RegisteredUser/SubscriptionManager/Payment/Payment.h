@@ -1,12 +1,16 @@
 #ifndef LAB2_PAYMENT_H
 #define LAB2_PAYMENT_H
 
-#include "../SubscriptionManager.h"
+#include "string"
+#include "../UserWallet/UserWallet.h"
 
 class Payment{
+private:
+    double amount;
+    std::string description;
 public:
-    Payment();
-    ~Payment();
+    Payment(double amount, std::string description);
+
 };
 
 #endif //LAB2_PAYMENT_H

@@ -60,3 +60,11 @@ unsigned long long Playlist::getTotalDuration() const {
     }
     return total;
 }
+
+std::vector <std::shared_ptr <Audio> > Playlist::getTracks() const {
+    return tracks;
+}
+
+bool Playlist::operator==(const Playlist& other) const {
+    return name == other.name && creator.getId() == other.creator.getId();
+}

@@ -21,6 +21,7 @@ public:
     void addTrack(const std::shared_ptr<Audio>& track);
     void removeTrack(size_t index);
     std::shared_ptr<Audio> getCurrentTrack() const;
+    std::vector <std::shared_ptr <Audio> > getTracks() const;
 
     std::string getName() const;
     RegisteredUser getCreator() const;
@@ -30,6 +31,8 @@ public:
     void setPublic(bool isPublic);
     void clear();
     unsigned long long getTotalDuration() const;
+
+    bool operator==(const Playlist& other) const;
 };
 
 #endif //LAB2_PLAYLIST_H

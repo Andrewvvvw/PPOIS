@@ -1,5 +1,23 @@
-//
-// Created by User on 30.10.2025.
-//
-
 #include "UserWallet.h"
+
+UserWallet::UserWallet(RegisteredUser* user, double balance) {
+    this->user = user;
+    this->balance = balance;
+}
+
+void UserWallet::addMoney(double amount) {
+    balance += amount;
+}
+
+void UserWallet::removeMoney(double amount) {
+    balance -= amount;
+}
+
+void UserWallet::payMonthlyPremium() {
+    if(balance < MONTHLY_PREMIUM_COST)
+        throw std::runtime_error("Not enough money");
+
+    Payment payment(MONTHLY_PREMIUM_COST, "monthly payment");
+    removeMoney(MONTHLY_PREMIUM_COST);
+    this->payments.push_back(std::make_shared<Payment>(payment));
+}

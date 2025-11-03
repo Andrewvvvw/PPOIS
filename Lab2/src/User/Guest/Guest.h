@@ -19,6 +19,8 @@ public:
 
     bool canViewContent() const;
     void incrementViewCount();
+
+    virtual bool getIsPremium() const override { return false; }
 };
 
 #endif // GUEST_H

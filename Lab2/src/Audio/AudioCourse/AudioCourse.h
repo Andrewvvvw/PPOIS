@@ -13,7 +13,7 @@ class AudioLecture;
 
 class AudioCourse : public Audio {
 private:
-    std::vector<std::shared_ptr<AudioLecture>> lectures;
+    std::vector <std::shared_ptr<AudioLecture> > lectures;
     std::shared_ptr<Lecturer> courseInstructor;
     std::string courseCode;
     std::string description;
