@@ -12,7 +12,6 @@ private:
     AdManager adManager;
     std::vector <Playlist> playlists;
 
-
 public:
     AudioCollection(User& owner);
 

@@ -9,6 +9,7 @@ private:
     unsigned long long duration;
     std::string name;
     unsigned long long coverID;
+    RegisteredUser* owner;
 public:
     Audio(unsigned long long duration, std::string name, unsigned long long coverID) :
         duration(duration), name(name), coverID(coverID) {};
@@ -16,6 +17,7 @@ public:
     [[nodiscard]] const std::string& getName() const { return name; }
     [[nodiscard]] unsigned long long getCoverID() const { return coverID; }
     [[nodiscard]] unsigned long long getDuration() const { return duration; }
+
 };
 
 #endif //LAB2_AUDIO_H

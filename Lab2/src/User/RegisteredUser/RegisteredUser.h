@@ -10,6 +10,7 @@
 #include "UserProfile/UserProfile.h"
 #include "UserStatistics/UserStatistics.h"
 #include "../../AudioCollection/AudioCollection.h"
+#include "../../Audio/FavoriteList/FavoriteList.h"
 
 class RegisteredUser : public User {
 protected:
@@ -19,6 +20,7 @@ protected:
     SubscriptionManager subscriptionManager;
     UserProfile userProfile;
     UserStatistics userStatistics;
+    FavoriteList favoriteList;
 
 public:
     RegisteredUser(const std::string& id, const std::string& username,
@@ -29,16 +31,20 @@ public:
     void setEmail(const std::string& newEmail) { email = newEmail; }
     void setPassword(const std::string& newPassword);
 
+    [[nodiscard]] std::string getPassword() const { return password; }
+
     [[nodiscard]] bool canUploadContent() const override { return false; }
     [[nodiscard]] bool canComment() const override { return true; }
     [[nodiscard]] std::string getUserType() const override { return "RegisteredUser"; }
-
-    [[nodiscard]] bool verifyPassword(const std::string& inputPassword) const;
 
     [[nodiscard]] SocialFunctionsManager* getSocialFunctionsManager() { return &socialFunctions; }
 
     [[nodiscard]] virtual bool getIsPremium() const override;
     void setPremium(bool premium);
+
+    std::vector <std::shared_ptr<Audio> > getFavoriteTracks() { return this->favoriteList.getTracks(); }
+    void addToFavorites(const std::shared_ptr<Audio>& audio) { this->favoriteList.addToFavorites(audio); }
+    void removeFromFavorites(const std::shared_ptr<Audio>& audio) { this->favoriteList.removeFromFavorites(audio); }
 };
 
 #endif // REGISTERED_USER_H

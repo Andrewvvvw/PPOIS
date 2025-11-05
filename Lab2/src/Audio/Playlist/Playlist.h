@@ -8,23 +8,23 @@
 #include "../../User/RegisteredUser/RegisteredUser.h"
 
 class Playlist {
-private:
+protected:
     std::string name;
-    RegisteredUser creator;
-    std::vector<std::shared_ptr<Audio>> tracks;
+    const RegisteredUser* creator;
+    std::vector < std::shared_ptr <Audio> > tracks;
     bool isPublic;
     int currentTrackIndex;
 
 public:
-    Playlist(const std::string& name, const RegisteredUser& creator, bool isPublic = true);
+    Playlist(const std::string& name,const RegisteredUser& creator, bool isPublic = true);
 
     void addTrack(const std::shared_ptr<Audio>& track);
-    void removeTrack(size_t index);
+    void removeTrack(const std::shared_ptr<Audio>& track);
     std::shared_ptr<Audio> getCurrentTrack() const;
     std::vector <std::shared_ptr <Audio> > getTracks() const;
 
     std::string getName() const;
-    RegisteredUser getCreator() const;
+    const RegisteredUser& getCreator() const;
     size_t getTrackCount() const;
     bool getIsPublic() const;
 
