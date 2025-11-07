@@ -3,7 +3,8 @@
 
 #include "../../Audio.h"
 #include <string>
-#include "../../../User/RegisteredUser/SongWriter/SongWriter.h"
+
+class SongWriter;
 
 class MusicTrack : public Audio {
 private:

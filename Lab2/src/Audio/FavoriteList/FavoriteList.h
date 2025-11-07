@@ -2,6 +2,7 @@
 #define LAB2_FAVORITELIST_H
 
 #include "../Audio.h"
+#include <vector>
 
 class Audio;
 

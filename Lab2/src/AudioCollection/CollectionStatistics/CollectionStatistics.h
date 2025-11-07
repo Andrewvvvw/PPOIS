@@ -13,6 +13,7 @@ private:
 public:
     explicit CollectionStatistics(const AudioCollection& audioCollection);
 
+    int getNumberOfPlaylists() const;
     int getTotalDuration() const;
     std::vector<std::string> getMostCommonAudioTypes(int topN) const;
 };

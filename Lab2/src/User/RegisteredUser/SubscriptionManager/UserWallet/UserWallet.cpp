@@ -1,4 +1,6 @@
 #include "UserWallet.h"
+#include "../../../../Exceptions/Exceptions.h"
+#include "../Payment/Payment.h"
 
 UserWallet::UserWallet(RegisteredUser* user, double balance) {
     this->user = user;
@@ -15,7 +17,7 @@ void UserWallet::removeMoney(double amount) {
 
 void UserWallet::payMonthlyPremium() {
     if(balance < MONTHLY_PREMIUM_COST)
-        throw std::runtime_error("Not enough money");
+        throw ExceptionNotEnoughMoney("Not enough money");
 
     Payment payment(MONTHLY_PREMIUM_COST, "monthly payment");
     removeMoney(MONTHLY_PREMIUM_COST);

@@ -1,4 +1,5 @@
 #include "MusicTrack.h"
+#include "../../../User/RegisteredUser/SongWriter/SongWriter.h"
 #include <ctime>
 
 MusicTrack::MusicTrack(const std::string& name,

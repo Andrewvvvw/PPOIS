@@ -2,11 +2,12 @@
 #define PLAYER_QUEUE_H
 
 #include <vector>
+#include <memory>
 #include "../../Audio/Audio.h"
 
 class PlayerQueue {
 private:
-    std::vector<Audio> queue;
+    std::vector<std::shared_ptr<Audio>> queue;
     size_t currentIndex;
     bool isLooped;
     int maxQueueSize;
@@ -14,10 +15,16 @@ private:
 public:
     PlayerQueue();
 
-    void addToQueue(const Audio& audio);
+    void addToQueue(const std::shared_ptr<Audio>& audio);
     void removeFromQueue(size_t index);
-    Audio getNext();
-    Audio getPrevious();
+    std::shared_ptr<Audio> getNext();
+    std::shared_ptr<Audio> getPrevious();
+    void setLooped(bool looped);
+    bool getIsLooped() const;
+    void setMaxQueueSize(int size);
+    int getMaxQueueSize() const;
+    size_t getCurrentIndex() const;
+    size_t getQueueSize() const;
 };
 
 #endif // PLAYER_QUEUE_H

@@ -1,5 +1,7 @@
 #include "AudioBook.h"
 #include <algorithm>
+#include "../../Exceptions/Exceptions.h"
+#include "memory"
 
 AudioBook::AudioBook(const std::string& title,
                      unsigned long long duration,
@@ -11,14 +13,23 @@ AudioBook::AudioBook(const std::string& title,
           narrator(narrator),
           currentChapter(0) {
 
-    if (author) {
-        author->publishBook(this);
-    }
-    if (narrator) {
-        narrator->addNarratedBook(this);
-    }
+//    auto book = std::make_shared<AudioBook>(title, duration, coverID, author, narrator);
+//    if (author)
+//        author->publishBook(book);
+//
+//    if (narrator)
+//        narrator->addNarratedBook(book);
+
 }
 
+void AudioBook::registerWithAuthorAndNarrator() {
+    if (author) {
+        author->publishBook(shared_from_this());
+    }
+    if (narrator) {
+        narrator->addNarratedBook(shared_from_this());
+    }
+}
 bool AudioBook::addChapter(const std::string& chapterTitle) {
     if (chapterTitle.empty()) {
         return false;
@@ -47,18 +58,19 @@ bool AudioBook::removeChapter(unsigned int chapterIndex) {
     return true;
 }
 
-bool AudioBook::setCurrentChapter(unsigned int chapter) {
-    if (chapter >= chapters.size()) {
-        return false;
-    }
+void AudioBook::setCurrentChapter(unsigned int chapter) {
+    if (chapter >= chapters.size() || chapter < 0)
+        throw ExceptionIncorrectChapterNumber("Incorrect chapter number");
 
     currentChapter = chapter;
-    return true;
 }
 
 std::string AudioBook::getCurrentChapter() const {
-    if (chapters.empty()) {
-        return "";
-    }
+    if (chapters.empty())
+        throw ExceptionIncorrectAudioBookChapters("Audio book needs to contain chapters");
     return chapters[currentChapter];
+}
+
+std::string AudioBook::getAuthor() const {
+    return author ? author->getUsername() : "Unknown Author";
 }

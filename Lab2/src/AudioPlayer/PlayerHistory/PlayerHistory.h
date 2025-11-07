@@ -2,11 +2,12 @@
 #define PLAYER_HISTORY_H
 
 #include <deque>
+#include <memory>
 #include "../../Audio/Audio.h"
 
 class PlayerHistory {
 private:
-    std::deque<Audio> history;
+    std::deque<std::shared_ptr<Audio>> history;
     size_t maxHistorySize;
     size_t currentPosition;
     bool isTrackingEnabled;
@@ -14,9 +15,9 @@ private:
 public:
     PlayerHistory();
 
-    void addToHistory(const Audio& audio);
-    Audio getPrevious();
-    Audio getNext();
+    void addToHistory(const std::shared_ptr<Audio>& audio);
+    std::shared_ptr<Audio> getPrevious();
+    std::shared_ptr<Audio> getNext();
     void clearHistory();
 };
 

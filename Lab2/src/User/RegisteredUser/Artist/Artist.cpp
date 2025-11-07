@@ -1,5 +1,9 @@
 #include "Artist.h"
 #include <algorithm>
+#include "../../../Exceptions/Exceptions.h"
+#include "../../../Audio/Album/MusicTrack/MusicTrack.h"
+#include "../RegisteredUser.h"
+#include "../../../Audio/Album/Album.h"
 
 Artist::Artist(const std::string& id,
                const std::string& username,
@@ -7,8 +11,11 @@ Artist::Artist(const std::string& id,
                const std::string& password,
                const std::string& artistName)
         : RegisteredUser(id, username, email, password),
-          artistName(artistName),
-          monthlyListeners(0) {}
+          monthlyListeners(0) {
+    if(artistName.empty())
+        throw ExceptionIncorrectArtistName("ArtistName can't be empty");
+    this->artistName = artistName;
+}
 
 void Artist::updateBiography(const std::string& newBio) {
     biography = newBio;
@@ -24,20 +31,25 @@ void Artist::updateMonthlyListeners(int change) {
     }
 }
 
-bool Artist::createAlbum(const std::string& title,
+void Artist::createAlbum(const std::string& title,
                          unsigned int releaseYear,
                          unsigned long long coverId) {
+    if(releaseYear > 2025 || releaseYear < 1950)
+        throw ExceptionIncorrectYear("Incorrect release year");
+
     for (const auto& album : albums) {
         if (album->getTitle() == title) {
-            return false;
+            throw ExceptionIncorrectAlbumTitle("Album with this title already exists");
         }
     }
+
+    if(title.empty())
+        throw ExceptionIncorrectAlbumTitle("Album title can't be empty");
 
     albums.push_back(std::make_shared<Album>(title,
                                              artistName,
                                              releaseYear,
                                              coverId));
-    return true;
 }
 
 bool Artist::addTrackToAlbum(const std::string& albumTitle,
@@ -69,14 +81,14 @@ bool Artist::addRemixToAlbum(const std::string& albumTitle,
 }
 
 std::vector<std::string> Artist::getAlbumTitles() const {
-    std::vector<std::string> titles;
+    std::vector <std::string> titles;
     for (const auto& album : albums) {
         titles.push_back(album->getTitle());
     }
     return titles;
 }
 
-std::shared_ptr<Album> Artist::getAlbum(const std::string& title) const {
+std::shared_ptr <Album> Artist::getAlbum(const std::string& title) const {
     for (const auto& album : albums) {
         if (album->getTitle() == title) {
             return album;

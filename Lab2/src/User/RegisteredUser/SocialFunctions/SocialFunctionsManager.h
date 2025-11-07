@@ -1,27 +1,31 @@
 #ifndef LAB2_SOCIALFUNCTIONSMANAGER_H
 #define LAB2_SOCIALFUNCTIONSMANAGER_H
 
-#include "../RegisteredUser.h"
+#include <vector>
+#include <memory>
+
+class RegisteredUser;
+class Audio;
 
 class SocialFunctionsManager{
 private:
     RegisteredUser* user;
 
-    std::vector <std::shared_ptr<RegisteredUser> > following;
-    std::vector <std::shared_ptr<RegisteredUser> > followers;
-    std::vector <std::shared_ptr<Audio> > likedAudio;
+    std::vector <std::weak_ptr<RegisteredUser> > following;
+    std::vector <std::weak_ptr<RegisteredUser> > followers;
+    std::vector <std::weak_ptr<Audio> > likedAudio;
 
 public:
-    SocialFunctionsManager(RegisteredUser* user);
+    explicit SocialFunctionsManager(RegisteredUser* user);
 
-    void followUser(RegisteredUser* user);
-    void unfollowUser(RegisteredUser* user);
-    void likeAudio(Audio* audio);
-    void unlikeAudio(Audio* audio);
+    void followUser(std::shared_ptr<RegisteredUser> userToFollow);
+    void unfollowUser(const std::shared_ptr<RegisteredUser>& userToUnfollow);
+    void likeAudio(std::shared_ptr<Audio> audio);
+    void unlikeAudio(const std::shared_ptr<Audio>& audio);
 
-    std::vector <std::shared_ptr<RegisteredUser> > getFollowing();
-    std::vector <std::shared_ptr<RegisteredUser> > getFollowers();
-    std::vector <std::shared_ptr<Audio> > getLikedAudio();
+    std::vector<std::shared_ptr<RegisteredUser>> getFollowing() const;
+    std::vector<std::shared_ptr<RegisteredUser>> getFollowers() const;
+    std::vector<std::shared_ptr<Audio>> getLikedAudio() const;
 };
 
 #endif //LAB2_SOCIALFUNCTIONSMANAGER_H

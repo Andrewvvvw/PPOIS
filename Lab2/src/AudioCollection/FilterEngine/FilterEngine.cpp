@@ -31,7 +31,8 @@ std::vector<Playlist> FilterEngine::getFilteredPlaylists() const {
             matches = false;
         }
 
-        if (matches && filterByMinTracks && playlist.getTracks().size() < minTracks) {
+        if (matches && filterByMinTracks &&
+            playlist.getTracks().size() < minTracks) {
             matches = false;
         }
 

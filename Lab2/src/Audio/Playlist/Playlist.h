@@ -5,7 +5,9 @@
 #include <string>
 #include <memory>
 #include "../Audio.h"
-#include "../../User/RegisteredUser/RegisteredUser.h"
+
+
+class RegisteredUser;
 
 class Playlist {
 protected:

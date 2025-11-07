@@ -2,16 +2,11 @@
 #define LAB2_USERSTATISTICS_H
 
 #include "../RegisteredUser.h"
-#include "../Artist/Artist.h"
 
 class UserStatistics{
-private:
-    RegisteredUser user;
 public:
-    UserStatistics(RegisteredUser user) : user(user) {};
-
-    int getNumberOfPlaylists();
-    std::string getFavoriteCreatorName();
+    UserStatistics();
+    std::string getFavoriteCreatorName(const RegisteredUser& user, const AudioCollection& audioCollection);
 };
 
 #endif //LAB2_USERSTATISTICS_H

@@ -1,7 +1,10 @@
 #ifndef LAB2_USERPROFILE_H
 #define LAB2_USERPROFILE_H
 
-#include "../RegisteredUser.h"
+#include <string>
+//#include "../RegisteredUser.h"
+class RegisteredUser;
+
 
 class UserProfile{
 private:

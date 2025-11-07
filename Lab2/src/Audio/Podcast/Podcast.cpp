@@ -16,4 +16,8 @@ std::string Podcast::getCategory() const {
     return category;
 }
 
+std::string Podcast::getAuthor() const {
+    return host ? host->getUsername() : "Unknown";
+}
+
 

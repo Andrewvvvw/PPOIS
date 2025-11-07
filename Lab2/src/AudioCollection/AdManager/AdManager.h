@@ -5,6 +5,8 @@
 #include "vector"
 #include "../../User/User.h"
 
+class User;
+
 class AdManager {
 private:
     bool hasPremium;

@@ -20,6 +20,8 @@ public:
     Podcaster* getHost() const;
     std::string getCategory() const;
 
+    std::string getAuthor() const override;
+
 };
 
 #endif //LAB2_PODCAST_H

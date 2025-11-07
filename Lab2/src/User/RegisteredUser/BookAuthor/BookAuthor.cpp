@@ -1,5 +1,6 @@
 #include "BookAuthor.h"
 #include <algorithm>
+#include "../../../Audio/AudioBook/AudioBook.h"
 
 BookAuthor::BookAuthor(const std::string& id,
                       const std::string& username,

@@ -2,15 +2,16 @@
 #define BOOK_AUTHOR_H
 
 #include "../RegisteredUser.h"
-#include "../../../Audio/AudioBook/AudioBook.h"
 #include <vector>
 #include <memory>
 #include <string>
 
+class AudioBook;
+
 class BookAuthor : public RegisteredUser {
 private:
     std::string biography;
-    std::vector<std::shared_ptr<AudioBook>> publishedBooks;
+    std::vector <std::shared_ptr<AudioBook> > publishedBooks;
     std::string primaryGenre;
 
 public:

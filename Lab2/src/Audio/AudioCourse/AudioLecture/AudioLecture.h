@@ -9,7 +9,7 @@
 
 class Lecturer;
 
-class AudioLecture : public Audio {
+class AudioLecture : public Audio, public std::enable_shared_from_this<AudioLecture> {
 private:
     std::shared_ptr<Lecturer> lecturer;
     std::vector<std::string> slides;
@@ -24,6 +24,8 @@ public:
                  const std::shared_ptr<Lecturer>& lecturer,
                  const std::string& topic,
                  const std::string& courseCode);
+
+    void registerWithLecturer();
 
     const std::shared_ptr<Lecturer>& getLecturer() const { return lecturer; }
     const std::string& getTopic() const { return topic; }

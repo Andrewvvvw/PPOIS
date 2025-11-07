@@ -3,8 +3,8 @@
 PlayerHistory::PlayerHistory()
     : maxHistorySize(100), currentPosition(0), isTrackingEnabled(true) {}
 
-void PlayerHistory::addToHistory(const Audio& audio) {
-    if (!isTrackingEnabled) return;
+void PlayerHistory::addToHistory(const std::shared_ptr<Audio>& audio) {
+    if (!isTrackingEnabled || !audio) return;
 
     if (currentPosition < history.size()) {
         history.erase(history.begin() + currentPosition, history.end());
@@ -15,24 +15,26 @@ void PlayerHistory::addToHistory(const Audio& audio) {
 
     if (history.size() > maxHistorySize) {
         history.pop_front();
-        currentPosition--;
+        if (currentPosition > 0) currentPosition--;
     }
 }
 
-Audio PlayerHistory::getPrevious() {
-    if (currentPosition > 0) {
-        currentPosition--;
-        return history[currentPosition];
+std::shared_ptr<Audio> PlayerHistory::getPrevious() {
+
+    if (currentPosition == 0 || history.empty()) {
+        return nullptr;
     }
-    return Audio();
+    currentPosition--;
+    return history[currentPosition];
 }
 
-Audio PlayerHistory::getNext() {
-    if (currentPosition < history.size() - 1) {
-        currentPosition++;
-        return history[currentPosition];
+std::shared_ptr<Audio> PlayerHistory::getNext() {
+
+    if (currentPosition >= history.size() - 1 || history.empty()) {
+        return nullptr;
     }
-    return Audio();
+    currentPosition++;
+    return history[currentPosition];
 }
 
 void PlayerHistory::clearHistory() {

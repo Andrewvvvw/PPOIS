@@ -1,25 +1,31 @@
 #include "Album.h"
 #include <algorithm>
+#include "../../Exceptions/Exceptions.h"
 
 Album::Album(const std::string& title,
              const std::string& artist,
              unsigned int releaseYear,
-             unsigned long long coverId)
-        : title(title),
-          artist(artist),
-          releaseYear(releaseYear),
-          coverId(coverId) {}
-
-void Album::addTrack(const std::shared_ptr<MusicTrack>& track) {
-    if (track) {
-        tracks.push_back(track);
-    }
+             unsigned long long coverId) :
+        artist(artist),
+        releaseYear(releaseYear),
+        coverId(coverId) {
+    if(title.empty())
+        throw ExceptionIncorrectAlbumTitle("Album title can't be empty");
+    this->title = title;
 }
 
-void Album::addRemix(const std::shared_ptr<TrackRemix>& remix) {
-    if (remix) {
+void Album::addTrack(const std::shared_ptr <MusicTrack>& track) {
+    if (track)
+        tracks.push_back(track);
+    else
+        throw ExceptionIncorrectTrack("Track can't be empty");
+}
+
+void Album::addRemix(const std::shared_ptr <TrackRemix>& remix) {
+    if (remix)
         remixes.push_back(remix);
-    }
+    else
+        throw ExceptionIncorrectTrack("Track can't be empty");
 }
 
 bool Album::removeTrack(const std::string& trackName) {

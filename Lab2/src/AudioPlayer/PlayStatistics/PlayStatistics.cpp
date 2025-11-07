@@ -4,7 +4,7 @@
 PlayStatistics::PlayStatistics() : totalPlays(0) {}
 
 void PlayStatistics::recordPlay(const Audio& audio) {
-    unsigned long long audioID = audio.coverID; // Using coverID as unique identifier
+    unsigned long long audioID = audio.getCoverID();
     playCounts[audioID]++;
     lastPlayed[audioID] = std::time(nullptr);
     totalPlays++;

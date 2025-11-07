@@ -3,9 +3,10 @@
 
 #include "../SubscriptionManager.h"
 #include "../../RegisteredUser.h"
-#include "../Payment/Payment.h"
+//#include "../Payment/Payment.h"
 
 constexpr double MONTHLY_PREMIUM_COST = 10;
+class Payment;
 
 class UserWallet{
 private:

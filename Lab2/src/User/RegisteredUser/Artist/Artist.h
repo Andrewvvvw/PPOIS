@@ -2,10 +2,14 @@
 #define ARTIST_H
 
 #include "../RegisteredUser.h"
-#include "../../../Audio/Album/Album.h"
 #include <vector>
 #include <memory>
 #include <string>
+
+class Album;
+class MusicTrack;
+class TrackRemix;
+class RegisteredUser;
 
 class Artist : public RegisteredUser {
 private:
@@ -29,7 +33,7 @@ public:
     void updateBiography(const std::string& newBio);
     void updateMonthlyListeners(int change);
 
-    bool createAlbum(const std::string& title,
+    void createAlbum(const std::string& title,
                     unsigned int releaseYear,
                     unsigned long long coverId);
 

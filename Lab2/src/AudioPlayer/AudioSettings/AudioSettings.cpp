@@ -16,3 +16,25 @@ void AudioSettings::toggleMute() {
 void AudioSettings::toggleRepeat() {
     isRepeatOn = !isRepeatOn;
 }
+
+int AudioSettings::getVolume() const {
+    return volume;
+}
+
+float AudioSettings::getPlaybackSpeed() const {
+    return playbackSpeed;
+}
+
+bool AudioSettings::getRepeatOn() const {
+    return isRepeatOn;
+}
+
+bool AudioSettings::getMuted() const {
+    return isMuted;
+}
+
+void AudioSettings::setPlaybackSpeed(float newSpeed) {
+    if (newSpeed >= 0.5f && newSpeed <= 2.0f) {
+        playbackSpeed = newSpeed;
+    }
+}

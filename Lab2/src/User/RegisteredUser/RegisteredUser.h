@@ -4,34 +4,36 @@
 #include "../User.h"
 #include <string>
 #include <vector>
+#include <memory>
+
 #include "SocialFunctions/SocialFunctionsManager.h"
-#include "SubscriptionManager/SubscriptionManager.h"
 #include "SubscriptionManager/UserWallet/UserWallet.h"
-#include "UserProfile/UserProfile.h"
 #include "UserStatistics/UserStatistics.h"
 #include "../../AudioCollection/AudioCollection.h"
 #include "../../Audio/FavoriteList/FavoriteList.h"
 
-class RegisteredUser : public User {
+class SocialFunctionsManager;
+class SubscriptionManager;
+class UserProfile;
+
+class RegisteredUser : public User, public std::enable_shared_from_this<RegisteredUser> {
 protected:
     std::string email;
     std::string password;
     SocialFunctionsManager socialFunctions;
-    SubscriptionManager subscriptionManager;
-    UserProfile userProfile;
-    UserStatistics userStatistics;
+    std::unique_ptr<SubscriptionManager> subscriptionManager;
+    std::unique_ptr<UserProfile> userProfile;
     FavoriteList favoriteList;
 
 public:
     RegisteredUser(const std::string& id, const std::string& username,
                    const std::string& email, const std::string& password);
-
-    [[nodiscard]] std::string getEmail() const { return email; }
-
-    void setEmail(const std::string& newEmail) { email = newEmail; }
-    void setPassword(const std::string& newPassword);
+    ~RegisteredUser();
 
     [[nodiscard]] std::string getPassword() const { return password; }
+    [[nodiscard]] std::string getEmail() const { return email; }
+    void setEmail(const std::string& newEmail);
+    void setPassword(const std::string& newPassword);
 
     [[nodiscard]] bool canUploadContent() const override { return false; }
     [[nodiscard]] bool canComment() const override { return true; }

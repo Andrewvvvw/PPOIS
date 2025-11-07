@@ -51,3 +51,7 @@ std::vector<std::string> CollectionStatistics::getMostCommonAudioTypes(int topN)
 
     return result;
 }
+
+int CollectionStatistics::getNumberOfPlaylists() const {
+    return totalPlaylists;
+}

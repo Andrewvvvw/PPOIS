@@ -1,19 +1,33 @@
 #include "UserStatistics.h"
 #include "map"
 #include "algorithm"
+#include "../Artist/Artist.h"
 
-int UserStatistics::getNumberOfPlaylists() {
-    return this->user.getPlaylists().size();
-}
+std::string UserStatistics::getFavoriteCreatorName(const RegisteredUser& user, const AudioCollection& audioCollection) {
+    std::unordered_map<std::string, int> creatorCounts;
+    auto playlists = audioCollection.getPlaylists();
 
-std::string UserStatistics::getFavoriteCreatorName() {
-    std::unordered_map <std::string , int> creatorCounts;
-
-    for(auto playlist : this->user.getPlaylists()){
-        std::vector <std::shared_ptr <Audio> > tracks = playlist->getTracks();
-        for(auto track : tracks) creatorCounts[track.getAuthor()]++;
+    for (const auto& playlist : playlists) {
+        auto tracks = playlist.getTracks();
+        for (const auto& track : tracks) {
+            if (track) {
+                creatorCounts[track->getAuthor()]++;
+            }
+        }
+    }
+    if (creatorCounts.empty()) {
+        return "";
     }
 
-    auto maxPair = std::max_element(creatorCounts.begin(), creatorCounts.end());
+    auto maxPair = std::max_element(
+            creatorCounts.begin(),
+            creatorCounts.end(),
+            [](const auto& a, const auto& b) {
+                return a.second < b.second;
+            }
+    );
+
     return maxPair->first;
 }
+
+UserStatistics::UserStatistics() = default;

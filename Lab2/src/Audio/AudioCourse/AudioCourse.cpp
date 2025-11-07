@@ -1,21 +1,22 @@
 #include "AudioCourse.h"
+#include "AudioLecture/AudioLecture.h"
 #include <algorithm>
 #include <numeric>
 
 AudioCourse::AudioCourse(const std::string& title,
                        unsigned long long coverID,
-                       const std::shared_ptr<Lecturer>& instructor,
                        const std::string& courseCode,
                        const std::string& description)
     : Audio(0, title, coverID),
-      courseInstructor(instructor),
       courseCode(courseCode),
       description(description) {}
 
 std::string AudioCourse::getAuthor() const {
-    return courseInstructor ? courseInstructor->getUsername() : "Unknown Instructor";
+    if (lectures.empty()) {
+        return "No authors";
+    }
+    return lectures[0]->getAuthor();
 }
-
 bool AudioCourse::addLecture(const std::shared_ptr<AudioLecture>& lecture) {
     if (!lecture || hasLecture(lecture)) {
         return false;

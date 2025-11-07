@@ -3,10 +3,11 @@
 
 #include "../../Audio/Audio.h"
 #include <string>
+#include <memory>
 
 class PlayingNowPanel {
 private:
-    const Audio* currentAudio;
+    std::shared_ptr<Audio> currentAudio;
     std::string artistName;
     std::string trackName;
     unsigned long long coverID;
@@ -15,9 +16,9 @@ private:
 public:
     PlayingNowPanel();
 
-    void updateTrackInfo(const Audio& audio);
+    void updateTrackInfo(const std::shared_ptr<Audio>& audio);
     void setProgress(float newProgress);
-    const Audio& getCurrentTrack() const;
+    std::shared_ptr<Audio> getCurrentTrack() const;
     float getProgress() const { return progress; }
     std::string getArtistName() const { return artistName; }
     std::string getTrackName() const { return trackName; }

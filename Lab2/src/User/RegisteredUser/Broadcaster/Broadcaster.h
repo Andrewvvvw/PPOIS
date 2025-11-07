@@ -2,10 +2,11 @@
 #define BROADCASTER_H
 
 #include "../RegisteredUser.h"
-#include "../../../Audio/AudioBook/AudioBook.h"
 #include <vector>
 #include <memory>
 #include <string>
+
+class AudioBook;
 
 class Broadcaster : public RegisteredUser {
 private:

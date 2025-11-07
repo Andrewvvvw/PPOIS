@@ -1,6 +1,8 @@
 #include "AudioCollection.h"
 
-AudioCollection::AudioCollection(User& owner) : owner(owner), adManager(owner) {}
+AudioCollection::AudioCollection(User& owner) :
+    owner(owner),
+    adManager(owner) {}
 
 void AudioCollection::addPlaylist(const Playlist& playlist) {
     playlists.push_back(playlist);
@@ -18,6 +20,6 @@ void AudioCollection::removePlaylist(const Playlist& playlist) {
     }
 }
 
-std::vector<Playlist> AudioCollection::getPlaylists() const {
+std::vector <Playlist> AudioCollection::getPlaylists() const {
     return playlists;
 }

@@ -2,11 +2,15 @@
 #define LAB2_RADIOHOST_H
 
 #include "../RegisteredUser.h"
-#include "../../../Audio/Radio/Radio.h"
+#include <vector>
+#include <memory>
+#include <string>
 
-class RadioHost : public RegisteredUser{
+class Radio;
+
+class RadioHost : public RegisteredUser {
 private:
-    std::vector<std::shared_ptr<Radio>> hostedRadios;
+    std::vector <std::shared_ptr<Radio> > hostedRadios;
     std::string favoriteGenre;
     std::string favoriteStation;
 public:

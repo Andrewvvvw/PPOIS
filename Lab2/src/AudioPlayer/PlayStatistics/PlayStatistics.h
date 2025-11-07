@@ -7,8 +7,8 @@
 
 class PlayStatistics {
 private:
-    std::map<unsigned long long, unsigned int> playCounts; // audioID -> play count
-    std::map<unsigned long long, time_t> lastPlayed;       // audioID -> last played timestamp
+    std::map<unsigned long long, unsigned int> playCounts;
+    std::map<unsigned long long, time_t> lastPlayed;
     unsigned int totalPlays;
 
 public:

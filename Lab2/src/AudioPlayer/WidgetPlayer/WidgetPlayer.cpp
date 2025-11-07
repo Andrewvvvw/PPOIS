@@ -16,3 +16,16 @@ void WidgetPlayer::setVolume(float newVolume) {
         volume = newVolume;
     }
 }
+
+void WidgetPlayer::setCurrentAudio(std::shared_ptr<Audio> audio) {
+    currentAudio = std::move(audio);
+}
+
+const Audio& WidgetPlayer::getCurrentAudio() const {
+    if (!currentAudio) {
+        throw std::runtime_error("No audio is currently set");
+    }
+    return *currentAudio;
+}
+
+

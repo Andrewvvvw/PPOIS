@@ -1,5 +1,6 @@
 #include "Broadcaster.h"
 #include <algorithm>
+#include "../../../Audio/AudioBook/AudioBook.h"
 
 Broadcaster::Broadcaster(const std::string& id,
                          const std::string& username,

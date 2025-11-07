@@ -11,11 +11,14 @@ AudioLecture::AudioLecture(const std::string& title,
           lecturer(lecturer),
           topic(topic),
           courseCode(courseCode),
-          currentSlide(0) {
+          currentSlide(0) {}
+
+void AudioLecture::registerWithLecturer() {
     if (lecturer) {
-        lecturer->addLecture(std::shared_ptr<AudioLecture>(this));
+        lecturer->addLecture(shared_from_this());
     }
 }
+
 
 std::string AudioLecture::getAuthor() const {
     return lecturer ? lecturer->getUsername() : "Unknown Lecturer";

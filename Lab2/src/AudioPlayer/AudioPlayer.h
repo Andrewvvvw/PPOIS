@@ -19,17 +19,14 @@ private:
 public:
     AudioPlayer();
 
-    // Core playback control
     void togglePlayPause();
     void playNext();
     void playPrevious();
 
-    // Queue management
-    void addToQueue(const Audio& audio);
+    void addToQueue(const std::shared_ptr<Audio>& audio);
     void removeFromQueue(size_t index);
 
-    // Player state
-    const Audio& getCurrentTrack() const;
+    std::shared_ptr<Audio> getCurrentTrack() const;
     float getPlaybackProgress() const;
     bool isCurrentlyPlaying() const { return isPlaying; }
 };

@@ -1,7 +1,8 @@
 #include "AuthorizationManager.h"
 
-AuthorizationManager::AuthorizationManager(int attempts) : maxLoginAttempts(attempts), isLoggedIn(false) {
-}
+AuthorizationManager::AuthorizationManager(int attempts) :
+    maxLoginAttempts(attempts),
+    isLoggedIn(false) {}
 
 bool AuthorizationManager::login(const std::string& email, const std::string& password) {
     auto it = userCredentials.find(email);

@@ -7,18 +7,19 @@ AudioPlayer::AudioPlayer()
 void AudioPlayer::togglePlayPause() {
     isPlaying = !isPlaying;
     if (isPlaying) {
-        if (getCurrentTrack().name.empty()) {
+        auto current = getCurrentTrack();
+        if (!current) {
             playNext();
         }
     }
 }
 
 void AudioPlayer::playNext() {
-    Audio next = queue.getNext();
-    if (next.name.empty()) return;
+    auto next = queue.getNext();
+    if (!next) return;
 
-    const Audio& current = getCurrentTrack();
-    if (!current.name.empty()) {
+    auto current = getCurrentTrack();
+    if (current) {
         history.addToHistory(current);
     }
 
@@ -28,23 +29,25 @@ void AudioPlayer::playNext() {
 }
 
 void AudioPlayer::playPrevious() {
-    Audio prev = history.getPrevious();
-    if (prev.name.empty()) return;
+    auto prev = history.getPrevious();
+    if (!prev) return;
 
     nowPlaying.updateTrackInfo(prev);
     currentProgress = 0.0f;
     isPlaying = true;
 }
 
-void AudioPlayer::addToQueue(const Audio& audio) {
-    queue.addToQueue(audio);
+void AudioPlayer::addToQueue(const std::shared_ptr<Audio>& audio) {
+    if (audio) {
+        queue.addToQueue(audio);
+    }
 }
 
 void AudioPlayer::removeFromQueue(size_t index) {
     queue.removeFromQueue(index);
 }
 
-const Audio& AudioPlayer::getCurrentTrack() const {
+std::shared_ptr<Audio> AudioPlayer::getCurrentTrack() const {
     return nowPlaying.getCurrentTrack();
 }
 

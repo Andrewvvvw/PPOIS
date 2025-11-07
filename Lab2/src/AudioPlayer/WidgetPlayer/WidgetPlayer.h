@@ -5,7 +5,7 @@
 
 class WidgetPlayer {
 private:
-    Audio currentAudio;
+    std::shared_ptr<Audio> currentAudio;
     bool isPlaying;
     bool isMinimized;
     float volume;
@@ -16,6 +16,12 @@ public:
     void togglePlayPause();
     void toggleMinimize();
     void setVolume(float newVolume);
+    void setCurrentAudio(std::shared_ptr<Audio> audio);
+
+    [[nodiscard]] const Audio& getCurrentAudio() const;
+    [[nodiscard]] bool getIsPlaying() const { return isPlaying; }
+    [[nodiscard]] bool getIsMinimized() const { return isMinimized; }
+    [[nodiscard]] float getVolume() const { return volume; }
 };
 
 #endif // WIDGET_PLAYER_H

@@ -5,18 +5,22 @@
 PlayingNowPanel::PlayingNowPanel()
     : coverID(0), progress(0) {}
 
-void PlayingNowPanel::updateTrackInfo(const Audio& audio) {
-    currentAudio = &audio;
-    trackName = audio.getName();
-    artistName = audio.getAuthor();
-    coverID = audio.getCoverID();
+void PlayingNowPanel::updateTrackInfo(const std::shared_ptr<Audio>& audio) {
+    if (!audio) {
+        currentAudio.reset();
+        trackName.clear();
+        artistName.clear();
+        coverID = 0;
+        return;
+    }
+    currentAudio = audio;
+    trackName = audio->getName();
+    artistName = audio->getAuthor();
+    coverID = audio->getCoverID();
 }
 
-const Audio& PlayingNowPanel::getCurrentTrack() const {
-    if (!currentAudio) {
-        throw std::runtime_error("No audio track is currently set");
-    }
-    return *currentAudio;
+std::shared_ptr<Audio> PlayingNowPanel::getCurrentTrack() const {
+    return currentAudio;
 }
 
 void PlayingNowPanel::setProgress(float newProgress) {
@@ -26,6 +30,9 @@ void PlayingNowPanel::setProgress(float newProgress) {
 }
 
 std::string PlayingNowPanel::getFormattedProgress() const {
+    if (!currentAudio) {
+        throw std::runtime_error("No audio track is currently set");
+    }
     unsigned int currentPos = static_cast<unsigned int>(progress * currentAudio->getDuration());
     unsigned int totalDuration = currentAudio->getDuration();
 

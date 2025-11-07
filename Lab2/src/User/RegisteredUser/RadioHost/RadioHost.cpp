@@ -10,30 +10,30 @@ RadioHost::RadioHost(const std::string& id,
     favoriteGenre(favoriteGenre),
     favoriteStation(favoriteStation) {}
 
-    void RadioHost::addRadio(std::shared_ptr<Radio> radio) {
-        hostedRadios.push_back(radio);
-    }
+void RadioHost::addRadio(std::shared_ptr<Radio> radio) {
+    hostedRadios.push_back(radio);
+}
 
-    void RadioHost::removeRadio(std::shared_ptr<Radio> radio) {
-        hostedRadios.erase(std::remove(hostedRadios.begin(), hostedRadios.end(), radio), hostedRadios.end());
-    }
+void RadioHost::removeRadio(std::shared_ptr<Radio> radio) {
+    hostedRadios.erase(std::remove(hostedRadios.begin(), hostedRadios.end(), radio), hostedRadios.end());
+}
 
-    std::vector<std::shared_ptr<Radio>> RadioHost::getHostedRadios() const {
-        return hostedRadios;
-    }
+std::vector<std::shared_ptr<Radio>> RadioHost::getHostedRadios() const {
+    return hostedRadios;
+}
 
-    std::string RadioHost::getFavoriteGenre() const {
-        return favoriteGenre;
-    }
+std::string RadioHost::getFavoriteGenre() const {
+    return favoriteGenre;
+}
 
-    std::string RadioHost::getFavoriteStation() const {
-        return favoriteStation;
-    }
+std::string RadioHost::getFavoriteStation() const {
+    return favoriteStation;
+}
 
-    void RadioHost::setFavoriteGenre(const std::string& genre) {
-        favoriteGenre = genre;
-    }
+void RadioHost::setFavoriteGenre(const std::string& genre) {
+    favoriteGenre = genre;
+}
 
-    void RadioHost::setFavoriteStation(const std::string& station) {
-        favoriteStation = station;
-    }
+void RadioHost::setFavoriteStation(const std::string& station) {
+    favoriteStation = station;
+}

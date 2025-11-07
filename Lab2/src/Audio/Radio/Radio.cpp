@@ -7,10 +7,14 @@ Radio::Radio(std::string genre,
           const std::string& title,
           const std::string& description,
           unsigned long long coverID) :
-        Audio(std::numeric_limits<unsigned long long>::max(),title, coverID),
+        Audio(18000,title, coverID),
         genre(genre),
         station(station),
         host(host) {}
+
+std::string Radio::getAuthor() const {
+    return host ? host->getUsername() : "Unknown";
+}
 
 void Radio::setGenre(const std::string& genre) {
     this->genre = genre;

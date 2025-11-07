@@ -10,10 +10,15 @@ private:
 
 public:
     AudioSettings();
+    int getVolume() const;
+    float getPlaybackSpeed() const;
+    bool getRepeatOn() const;
+    bool getMuted() const;
 
     void setVolume(int newVolume);
     void toggleMute();
     void toggleRepeat();
+    void setPlaybackSpeed(float newSpeed);
 };
 
 #endif // AUDIO_SETTINGS_H

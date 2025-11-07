@@ -18,6 +18,8 @@ public:
           const std::string& description,
           unsigned long long coverID);
 
+    std::string getAuthor() const override;
+
     void setGenre(const std::string& genre);
     void setStation(const std::string& station);
     void setHost(const std::shared_ptr<RadioHost>& host);

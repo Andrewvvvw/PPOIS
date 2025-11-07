@@ -10,7 +10,7 @@ class AudioLecture;
 
 class Lecturer : public RegisteredUser {
 private:
-    std::vector<std::shared_ptr<AudioLecture>> lectures;
+    std::vector <std::shared_ptr <AudioLecture> > lectures;
     std::string institution;
     std::string department;
 

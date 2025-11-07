@@ -2,10 +2,11 @@
 #define FULLSCREEN_PLAYER_H
 
 #include "../../Audio/Audio.h"
+#include <memory>
 
 class FullScreenPlayer {
 private:
-    Audio currentAudio;
+    std::shared_ptr<Audio> currentAudio;
     bool isPlaying;
     bool isFullScreen;
     float playbackProgress;

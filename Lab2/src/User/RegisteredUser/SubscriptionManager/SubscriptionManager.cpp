@@ -1,16 +1,17 @@
 #include "SubscriptionManager.h"
 
-SubscriptionManager::SubscriptionManager(RegisteredUser *user, UserWallet *userWallet) {
-    this->user = user;
-    this->userWallet = userWallet;
-    hasPremium = false;
+SubscriptionManager::SubscriptionManager(RegisteredUser* user, std::unique_ptr<UserWallet> wallet)
+        : user(user), wallet(std::move(wallet)), hasPremium(false) {
+    if (!user || !this->wallet) {
+        throw std::invalid_argument("User and wallet cannot be null");
+    }
 }
 
 void SubscriptionManager::getPremium() {
     if (hasPremium) {
         throw std::runtime_error("User already has premium");
     }
-    userWallet->payMonthlyPremium();
+    wallet->payMonthlyPremium();
     hasPremium = true;
 }
 

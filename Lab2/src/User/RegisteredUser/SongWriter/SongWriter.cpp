@@ -1,7 +1,11 @@
 #include "SongWriter.h"
+#include "../../../Audio/Album/MusicTrack/MusicTrack.h"
 
-SongWriter::SongWriter(const std::string &id, const std::string &username, const std::string &email,
-                       const std::string &password, const std::string &newBio) :
+SongWriter::SongWriter(const std::string &id,
+                       const std::string &username,
+                       const std::string &email,
+                       const std::string &password,
+                       const std::string &newBio) :
                        RegisteredUser(id, username, email, password),
                         bio(newBio) {}
 
