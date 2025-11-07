@@ -28,4 +28,16 @@ const Audio& WidgetPlayer::getCurrentAudio() const {
     return *currentAudio;
 }
 
+bool WidgetPlayer::getIsPlaying() const {
+    return isPlaying;
+}
+
+bool WidgetPlayer::getIsMinimized() const {
+    return isMinimized;
+}
+
+float WidgetPlayer::getVolume() const {
+    return volume;
+}
+
 

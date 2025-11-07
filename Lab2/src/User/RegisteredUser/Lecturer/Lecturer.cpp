@@ -37,3 +37,15 @@ bool Lecturer::hasLecture(const std::shared_ptr<AudioLecture>& lecture) const {
     }
     return std::find(lectures.begin(), lectures.end(), lecture) != lectures.end();
 }
+
+const std::string& Lecturer::getInstitution() const {
+    return institution;
+}
+
+const std::string& Lecturer::getDepartment() const {
+    return department;
+}
+
+const std::vector<std::shared_ptr<AudioLecture>>& Lecturer::getLectures() const {
+    return lectures;
+}

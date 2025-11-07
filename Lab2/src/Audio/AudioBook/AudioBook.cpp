@@ -13,13 +13,6 @@ AudioBook::AudioBook(const std::string& title,
           narrator(narrator),
           currentChapter(0) {
 
-//    auto book = std::make_shared<AudioBook>(title, duration, coverID, author, narrator);
-//    if (author)
-//        author->publishBook(book);
-//
-//    if (narrator)
-//        narrator->addNarratedBook(book);
-
 }
 
 void AudioBook::registerWithAuthorAndNarrator() {
@@ -73,4 +66,20 @@ std::string AudioBook::getCurrentChapter() const {
 
 std::string AudioBook::getAuthor() const {
     return author ? author->getUsername() : "Unknown Author";
+}
+
+const std::shared_ptr<BookAuthor>& AudioBook::getBookAuthor() const {
+    return author;
+}
+
+const std::shared_ptr<Broadcaster>& AudioBook::getNarrator() const {
+    return narrator;
+}
+
+unsigned int AudioBook::getChapterCount() const {
+    return chapters.size();
+}
+
+std::vector<std::string> AudioBook::getChapters() const {
+    return chapters;
 }

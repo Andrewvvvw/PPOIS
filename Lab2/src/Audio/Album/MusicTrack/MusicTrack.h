@@ -21,10 +21,10 @@ public:
                const std::string& genre,
                unsigned int releaseYear);
 
-    std::string getAuthor() const override { return artistName; }
-    std::string getGenre() const { return genre; }
-    unsigned int getReleaseYear() const { return releaseYear; }
-    std::shared_ptr<SongWriter> getSongWriter() const { return songWriter; }
+    std::string getAuthor() const override;
+    std::string getGenre() const;
+    unsigned int getReleaseYear() const;
+    std::shared_ptr<SongWriter> getSongWriter() const;
 
     void updateGenre(const std::string& newGenre);
     bool isClassic() const;

@@ -13,9 +13,9 @@ private:
 public:
     Audio(unsigned long long duration, std::string name, unsigned long long coverID);
     [[nodiscard]] virtual std::string getAuthor() const = 0;
-    [[nodiscard]] const std::string& getName() const { return name; }
-    [[nodiscard]] unsigned long long getCoverID() const { return coverID; }
-    [[nodiscard]] unsigned long long getDuration() const { return duration; }
+    [[nodiscard]] const std::string& getName() const;
+    [[nodiscard]] unsigned long long getCoverID() const;
+    [[nodiscard]] unsigned long long getDuration() const;
     virtual ~Audio() = default;
 };
 

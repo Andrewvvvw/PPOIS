@@ -22,3 +22,6 @@ bool Podcaster::hasPodcast(const std::shared_ptr<Podcast> &podcast) const {
     return std::find(podcasts.begin(), podcasts.end(), podcast) != podcasts.end();
 }
 
+const std::vector<std::shared_ptr<Podcast>>& Podcaster::getPodcasts() const {
+    return podcasts;
+}

@@ -10,3 +10,7 @@ void FavoriteList::removeFromFavorites(const std::shared_ptr<Audio>& audio) {
         tracks.erase(it);
     }
 }
+
+const std::vector<std::shared_ptr<Audio>>& FavoriteList::getTracks() const {
+    return tracks;
+}

@@ -44,3 +44,39 @@ void RegisteredUser::setEmail(const std::string &newEmail) {
         throw ExceptionIncorrectEmail("Email can't be empty");
     email = newEmail;
 }
+
+std::string RegisteredUser::getPassword() const {
+    return password;
+}
+
+std::string RegisteredUser::getEmail() const {
+    return email;
+}
+
+bool RegisteredUser::canUploadContent() const {
+    return false;
+}
+
+bool RegisteredUser::canComment() const {
+    return true;
+}
+
+std::string RegisteredUser::getUserType() const {
+    return "RegisteredUser";
+}
+
+SocialFunctionsManager* RegisteredUser::getSocialFunctionsManager() {
+    return &socialFunctions;
+}
+
+std::vector <std::shared_ptr<Audio> > RegisteredUser::getFavoriteTracks() {
+    return this->favoriteList.getTracks();
+}
+
+void RegisteredUser::addToFavorites(const std::shared_ptr<Audio>& audio) {
+    this->favoriteList.addToFavorites(audio);
+}
+
+void RegisteredUser::removeFromFavorites(const std::shared_ptr<Audio>& audio) {
+    this->favoriteList.removeFromFavorites(audio);
+}

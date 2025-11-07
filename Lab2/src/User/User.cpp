@@ -14,3 +14,39 @@ void User::setUsername(const std::string &newUsername) {
 }
 
 User::~User() = default;
+
+std::string User::getId() const {
+    return id;
+}
+
+std::string User::getUsername() const {
+    return username;
+}
+
+time_t User::getRegistrationDate() const {
+    return registrationDate;
+}
+
+bool User::canUploadContent() const {
+    return false;
+}
+
+bool User::canComment() const {
+    return false;
+}
+
+std::string User::getUserType() const {
+    return "User";
+}
+
+bool User::getIsPremium() const {
+    return false;
+}
+
+AudioCollection* User::getAudioCollection() {
+    return audioCollection.get();
+}
+
+const AudioCollection* User::getAudioCollection() const {
+    return audioCollection.get();
+}

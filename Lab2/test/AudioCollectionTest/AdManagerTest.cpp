@@ -89,7 +89,6 @@ SUITE(AdManagerTest) {
         RegisteredUser user("1", "testuser", "test@example.com", "password123");
         AdManager manager(user);
 
-        // Add multiple advertisements
         for (int i = 0; i < 5; ++i) {
             Advertisement ad("ad" + std::to_string(i), "Content " + std::to_string(i), i * 10);
             manager.addAdvertisement(ad);
@@ -118,7 +117,6 @@ SUITE(AdManagerTest) {
             manager.addAdvertisement(ad);
         }
 
-        // Remove some ads
         manager.removeAdvertisement(testAds[1]);
         manager.removeAdvertisement(testAds[3]);
 
@@ -173,26 +171,21 @@ SUITE(AdManagerTest) {
         RegisteredUser user("1", "testuser", "test@example.com", "password123");
         AdManager manager(user);
 
-        // Initial state
                 CHECK(manager.getAdvertisements().empty());
 
-        // Add ads
         Advertisement ad1("ad1", "Ad 1", 10);
         Advertisement ad2("ad2", "Ad 2", 20);
         manager.addAdvertisement(ad1);
         manager.addAdvertisement(ad2);
 
-        // Verify addition
         auto ads = manager.getAdvertisements();
                 CHECK_EQUAL(2, ads.size());
 
-        // Remove and verify
         manager.removeAdvertisement(ad1);
         ads = manager.getAdvertisements();
                 CHECK_EQUAL(1, ads.size());
                 CHECK_EQUAL("ad2", ads[0].getId());
 
-        // Add more
         Advertisement ad3("ad3", "Ad 3", 30);
         manager.addAdvertisement(ad3);
         ads = manager.getAdvertisements();
@@ -203,15 +196,12 @@ SUITE(AdManagerTest) {
         RegisteredUser user("1", "testuser", "test@example.com", "password123");
         AdManager manager(user);
 
-        // Add some ads
         Advertisement ad1("ad1", "Ad 1", 10);
         Advertisement ad2("ad2", "Ad 2", 20);
         manager.addAdvertisement(ad1);
 
-        // Try to remove non-existent ad
         manager.removeAdvertisement(ad2);
 
-        // Verify only ad1 remains
         auto ads = manager.getAdvertisements();
                 CHECK_EQUAL(1, ads.size());
                 CHECK_EQUAL("ad1", ads[0].getId());
@@ -221,13 +211,11 @@ SUITE(AdManagerTest) {
         RegisteredUser user("1", "testuser", "test@example.com", "password123");
         AdManager manager(user);
 
-        // Add multiple ads
         std::vector<std::string> contents = {"First", "Second", "Third", "Fourth"};
         for (size_t i = 0; i < contents.size(); ++i) {
             manager.addAdvertisement({"ad" + std::to_string(i+1), contents[i], static_cast<int>((i+1)*10)});
         }
 
-        // Verify each ad's content
         for (size_t i = 0; i < contents.size(); ++i) {
                     CHECK_EQUAL(contents[i], manager.showAd(static_cast<int>(i)));
         }

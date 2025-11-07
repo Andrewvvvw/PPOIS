@@ -13,9 +13,9 @@ private:
 public:
     AudioFile(const std::string& path, unsigned long size, const std::string& fileFormat);
 
-    const std::string& getFilePath() const { return filePath; }
-    unsigned long getFileSize() const { return fileSize; }
-    const std::string& getFormat() const { return format; }
+    const std::string& getFilePath() const;
+    unsigned long getFileSize() const;
+    const std::string& getFormat() const;
 
     bool validate() const;
 };

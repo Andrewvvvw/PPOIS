@@ -28,3 +28,15 @@ bool AudioFile::validate() const {
 
     return true;
 }
+
+const std::string& AudioFile::getFilePath() const {
+    return filePath;
+}
+
+unsigned long AudioFile::getFileSize() const {
+    return fileSize;
+}
+
+const std::string& AudioFile::getFormat() const {
+    return format;
+}

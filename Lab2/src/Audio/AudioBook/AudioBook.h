@@ -26,8 +26,8 @@ public:
              const std::shared_ptr<Broadcaster>& narrator);
 
     void registerWithAuthorAndNarrator();
-    const std::shared_ptr<BookAuthor>& getBookAuthor() const { return author; }
-    const std::shared_ptr<Broadcaster>& getNarrator() const { return narrator; }
+    const std::shared_ptr<BookAuthor>& getBookAuthor() const;
+    const std::shared_ptr<Broadcaster>& getNarrator() const;
     std::string getAuthor() const override;
 
     bool addChapter(const std::string& chapterTitle);
@@ -36,8 +36,8 @@ public:
     void setCurrentChapter(unsigned int chapter);
     std::string getCurrentChapter() const;
 
-    unsigned int getChapterCount() const { return chapters.size(); }
-    std::vector<std::string> getChapters() const { return chapters; }
+    unsigned int getChapterCount() const;
+    std::vector<std::string> getChapters() const;
 };
 
 #endif // AUDIO_BOOK_H

@@ -96,3 +96,23 @@ std::shared_ptr <Album> Artist::getAlbum(const std::string& title) const {
     }
     return nullptr;
 }
+
+std::string Artist::getUserType() const {
+    return "Artist";
+}
+
+bool Artist::canUploadContent() const {
+    return true;
+}
+
+std::string Artist::getArtistName() const {
+    return artistName;
+}
+
+std::string Artist::getBiography() const {
+    return biography;
+}
+
+unsigned int Artist::getMonthlyListeners() const {
+    return monthlyListeners;
+}

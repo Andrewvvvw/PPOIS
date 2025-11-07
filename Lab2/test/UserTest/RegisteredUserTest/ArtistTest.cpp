@@ -130,7 +130,6 @@ SUITE(ArtistTest) {
                 CHECK(result2);
     }
 
-    // Test adding a null track
     TEST(TestAddNullTrackToAlbum) {
         shared_ptr<Artist> artist = make_shared<Artist>("id1", "testuser", "test@test.com", "pass123", "Test Artist");
         const string albumTitle = "Test Album";

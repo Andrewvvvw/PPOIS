@@ -2,7 +2,6 @@
 #define LAB2_PAYMENT_H
 
 #include "string"
-//#include "../UserWallet/UserWallet.h"
 
 class Payment{
 private:

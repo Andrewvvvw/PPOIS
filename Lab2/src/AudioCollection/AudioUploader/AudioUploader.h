@@ -17,9 +17,9 @@ public:
                   size_t maxSizeKB,
                   const std::vector<std::string>& formats);
 
-    const std::string& getUploadDirectory() const { return uploadDirectory; }
-    size_t getMaxFileSizeKB() const { return maxFileSizeKB; }
-    const std::vector<std::string>& getAllowedFormats() const { return allowedFormats; }
+    const std::string& getUploadDirectory() const;
+    size_t getMaxFileSizeKB() const;
+    const std::vector<std::string>& getAllowedFormats() const;
 
     bool uploadAudio(AudioFile audioFile);
     bool validateFile(AudioFile audioFile) const;

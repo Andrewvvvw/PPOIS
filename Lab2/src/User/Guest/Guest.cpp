@@ -18,3 +18,19 @@ void Guest::incrementViewCount() {
         viewLimit++;
     }
 }
+
+bool Guest::getIsPremium() const {
+    return false;
+}
+
+bool Guest::canComment() const {
+    return false;
+}
+
+std::string Guest::getUserType() const {
+    return "Guest";
+}
+
+unsigned int Guest::getViewLimit() const {
+    return viewLimit;
+}

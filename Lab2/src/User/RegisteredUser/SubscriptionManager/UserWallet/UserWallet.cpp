@@ -23,3 +23,15 @@ void UserWallet::payMonthlyPremium() {
     removeMoney(MONTHLY_PREMIUM_COST);
     this->payments.push_back(std::make_shared<Payment>(payment));
 }
+
+std::vector<std::shared_ptr<Payment>> UserWallet::getPayments() const {
+    return payments;
+}
+
+double UserWallet::getBalance() const {
+    return balance;
+}
+
+void UserWallet::setBalance(double balance) {
+    this->balance = balance;
+}

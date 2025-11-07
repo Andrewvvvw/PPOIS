@@ -22,9 +22,9 @@ public:
                 const std::string& password,
                 const std::string& displayName);
 
-    std::string getDisplayName() const { return displayName; }
-    std::string getNarrationStyle() const { return narrationStyle; }
-    unsigned int getYearsOfExperience() const { return yearsOfExperience; }
+    std::string getDisplayName() const;
+    std::string getNarrationStyle() const;
+    unsigned int getYearsOfExperience() const;
 
     void updateNarrationStyle(const std::string& style);
     void updateExperience(unsigned int years);
@@ -35,8 +35,8 @@ public:
     std::vector<std::string> getNarratedTitles() const;
     std::shared_ptr<AudioBook> getNarratedBook(const std::string& title) const;
 
-    std::string getUserType() const override { return "Broadcaster"; }
-    bool canUploadContent() const override { return true; }
+    std::string getUserType() const override;
+    bool canUploadContent() const override;
 };
 
 #endif // BROADCASTER_H

@@ -35,3 +35,7 @@ bool SongWriter::hasTrack(const std::shared_ptr<MusicTrack> &track) const {
     }
     return std::find(tracks.begin(), tracks.end(), track) != tracks.end();
 }
+
+const std::vector <std::shared_ptr<MusicTrack>> &SongWriter::getTracks() const {
+    return tracks;
+}

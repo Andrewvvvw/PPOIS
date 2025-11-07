@@ -2,7 +2,6 @@
 #define LAB2_USERPROFILE_H
 
 #include <string>
-//#include "../RegisteredUser.h"
 class RegisteredUser;
 
 
@@ -15,13 +14,13 @@ private:
 public:
     UserProfile(RegisteredUser* user, std::string bio, std::string profilePictureId, std::string backgroundPictureId);
 
-    void setBio(std::string bio){ this->bio = bio; }
-    void setProfilePictureId(std::string profilePictureId){ this->profilePictureId = profilePictureId; }
-    void setBackgroundPictureId(std::string backgroundPictureId){ this->backgroundPictureId = backgroundPictureId; }
+    void setBio(std::string bio);
+    void setProfilePictureId(std::string profilePictureId);
+    void setBackgroundPictureId(std::string backgroundPictureId);
 
-    std::string getBio(){ return bio; }
-    std::string getProfilePictureId(){ return profilePictureId; }
-    std::string getBackgroundPictureId(){ return backgroundPictureId; }
+    std::string getBio();
+    std::string getProfilePictureId();
+    std::string getBackgroundPictureId();
 };
 
 #endif //LAB2_USERPROFILE_H

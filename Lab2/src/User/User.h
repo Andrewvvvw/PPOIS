@@ -18,19 +18,19 @@ public:
     User(const std::string& id, const std::string& username);
     virtual ~User();
 
-    std::string getId() const { return id; }
-    std::string getUsername() const { return username; }
-    time_t getRegistrationDate() const { return registrationDate; }
+    std::string getId() const;
+    std::string getUsername() const;
+    time_t getRegistrationDate() const;
 
     void setUsername(const std::string& newUsername);
 
-    virtual bool canUploadContent() const { return false; }
-    virtual bool canComment() const { return false; }
+    virtual bool canUploadContent() const;
+    virtual bool canComment() const;
     virtual std::string getUserType() const = 0;
-    virtual bool getIsPremium() const { return false; }
+    virtual bool getIsPremium() const;
 
-    AudioCollection* getAudioCollection() { return audioCollection.get(); }
-    const AudioCollection* getAudioCollection() const { return audioCollection.get(); }
+    AudioCollection* getAudioCollection();
+    const AudioCollection* getAudioCollection() const;
 };
 
 #endif // USER_H

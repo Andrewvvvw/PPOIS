@@ -17,22 +17,22 @@ SUITE(SleepTimerTest) {
 
     TEST(TestStartAndIsActive) {
         SleepTimer timer;
-        timer.setDuration(1); // 1 second
+        timer.setDuration(1);
         timer.start();
                 CHECK(timer.getRemainingTime() > 0);
     }
 
     TEST(TestIsExpired) {
         SleepTimer timer;
-        timer.setDuration(1); // 1 second
+        timer.setDuration(1);
         timer.start();
-        std::this_thread::sleep_for(std::chrono::milliseconds(1100)); // 1.1 seconds
+        std::this_thread::sleep_for(std::chrono::milliseconds(1100));
                 CHECK(timer.isExpired());
     }
 
     TEST(TestStop) {
         SleepTimer timer;
-        timer.setDuration(10); // 10 seconds
+        timer.setDuration(10);
         timer.start();
         timer.stop();
                 CHECK_EQUAL(0, timer.getRemainingTime());
@@ -41,20 +41,20 @@ SUITE(SleepTimerTest) {
 
     TEST(TestGetRemainingTime) {
         SleepTimer timer;
-        timer.setDuration(2); // 2 seconds
+        timer.setDuration(2);
         timer.start();
         int remaining = timer.getRemainingTime();
                 CHECK(remaining > 0 && remaining <= 2);
-        std::this_thread::sleep_for(std::chrono::milliseconds(1100)); // 1.1 seconds
+        std::this_thread::sleep_for(std::chrono::milliseconds(1100));
         int newRemaining = timer.getRemainingTime();
                 CHECK(newRemaining < remaining);
     }
 
     TEST(TestPause) {
         SleepTimer timer;
-        timer.setDuration(10); // 10 seconds
+        timer.setDuration(10);
         timer.start();
-        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // 0.1 seconds
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
         timer.pause();
         int remainingAfterPause = timer.getRemainingTime();
         std::this_thread::sleep_for(std::chrono::milliseconds(100));

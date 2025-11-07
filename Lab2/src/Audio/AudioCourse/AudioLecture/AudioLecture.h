@@ -27,17 +27,17 @@ public:
 
     void registerWithLecturer();
 
-    const std::shared_ptr<Lecturer>& getLecturer() const { return lecturer; }
-    const std::string& getTopic() const { return topic; }
-    const std::string& getCourseCode() const { return courseCode; }
+    const std::shared_ptr<Lecturer>& getLecturer() const;
+    const std::string& getTopic() const;
+    const std::string& getCourseCode() const;
     std::string getAuthor() const override;
 
     bool addSlide(const std::string& slideContent);
     bool removeSlide(unsigned int slideIndex);
     bool setCurrentSlide(unsigned int slide);
     std::string getCurrentSlide() const;
-    unsigned int getSlideCount() const { return slides.size(); }
-    std::vector<std::string> getSlides() const { return slides; }
+    unsigned int getSlideCount() const;
+    std::vector<std::string> getSlides() const;
 };
 
 #endif // AUDIO_LECTURE_H

@@ -28,7 +28,7 @@ public:
 
     std::shared_ptr<Audio> getCurrentTrack() const;
     float getPlaybackProgress() const;
-    bool isCurrentlyPlaying() const { return isPlaying; }
+    bool isCurrentlyPlaying() const;
 };
 
 #endif // AUDIO_PLAYER_H

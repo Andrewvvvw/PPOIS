@@ -100,3 +100,23 @@ unsigned long long AudioCourse::getTotalDuration() const {
             return sum + (lecture ? lecture->getDuration() : 0);
         });
 }
+
+const std::string& AudioCourse::getCourseCode() const {
+    return courseCode;
+}
+
+const std::string& AudioCourse::getDescription() const {
+    return description;
+}
+
+const std::vector<std::string>& AudioCourse::getLearningObjectives() const {
+    return learningObjectives;
+}
+
+const std::vector<std::string>& AudioCourse::getPrerequisites() const {
+    return prerequisites;
+}
+
+std::vector <std::shared_ptr <AudioLecture> > AudioCourse::getLectures() const {
+    return lectures;
+}

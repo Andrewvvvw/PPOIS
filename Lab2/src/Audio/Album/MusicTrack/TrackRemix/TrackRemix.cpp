@@ -16,3 +16,15 @@ TrackRemix::TrackRemix(const std::string& name,
 void TrackRemix::updateRemixStyle(const std::string& newStyle) {
     remixStyle = newStyle;
 }
+
+std::string TrackRemix::getOriginalTrackId() const {
+    return originalTrackId;
+}
+
+std::string TrackRemix::getRemixStyle() const {
+    return remixStyle;
+}
+
+std::string TrackRemix::getRemixArtist() const {
+    return remixArtist;
+}

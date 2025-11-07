@@ -22,10 +22,10 @@ public:
           unsigned int releaseYear,
           unsigned long long coverId);
 
-    std::string getTitle() const { return title; }
-    std::string getArtist() const { return artist; }
-    unsigned int getReleaseYear() const { return releaseYear; }
-    unsigned long long getCoverId() const { return coverId; }
+    std::string getTitle() const;
+    std::string getArtist() const;
+    unsigned int getReleaseYear() const;
+    unsigned long long getCoverId() const;
 
     void addTrack(const std::shared_ptr<MusicTrack>& track);
     void addRemix(const std::shared_ptr<TrackRemix>& remix);

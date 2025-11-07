@@ -22,9 +22,9 @@ public:
              const std::string& institution,
              const std::string& department);
 
-    const std::string& getInstitution() const { return institution; }
-    const std::string& getDepartment() const { return department; }
-    const std::vector<std::shared_ptr<AudioLecture>>& getLectures() const { return lectures; }
+    const std::string& getInstitution() const;
+    const std::string& getDepartment() const;
+    const std::vector<std::shared_ptr<AudioLecture>>& getLectures() const;
 
     bool addLecture(const std::shared_ptr<AudioLecture>& lecture);
     bool removeLecture(const std::shared_ptr<AudioLecture>& lecture);

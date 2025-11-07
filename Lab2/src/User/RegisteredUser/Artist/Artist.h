@@ -26,9 +26,9 @@ public:
           const std::string& password,
           const std::string& artistName);
 
-    std::string getArtistName() const { return artistName; }
-    std::string getBiography() const { return biography; }
-    unsigned int getMonthlyListeners() const { return monthlyListeners; }
+    std::string getArtistName() const;
+    std::string getBiography() const;
+    unsigned int getMonthlyListeners() const;
 
     void updateBiography(const std::string& newBio);
     void updateMonthlyListeners(int change);
@@ -46,8 +46,8 @@ public:
     std::vector<std::string> getAlbumTitles() const;
     std::shared_ptr<Album> getAlbum(const std::string& title) const;
 
-    std::string getUserType() const override { return "Artist"; }
-    bool canUploadContent() const override { return true; }
+    std::string getUserType() const override;
+    bool canUploadContent() const override;
 };
 
 #endif // ARTIST_H

@@ -79,3 +79,19 @@ std::vector<std::string> Album::getTrackList() const {
 
     return trackList;
 }
+
+std::string Album::getTitle() const {
+    return title;
+}
+
+std::string Album::getArtist() const {
+    return artist;
+}
+
+unsigned int Album::getReleaseYear() const {
+    return releaseYear;
+}
+
+unsigned long long Album::getCoverId() const {
+    return coverId;
+}

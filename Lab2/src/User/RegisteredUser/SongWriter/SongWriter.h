@@ -24,7 +24,7 @@ public:
     bool removeTrack(const std::shared_ptr<MusicTrack>& track);
     bool hasTrack(const std::shared_ptr<MusicTrack>& track) const;
 
-    const std::vector<std::shared_ptr<MusicTrack>>& getTracks() const { return tracks; }
+    const std::vector<std::shared_ptr<MusicTrack>>& getTracks() const;
 };
 
 #endif //LAB2_SONGWRITER_H

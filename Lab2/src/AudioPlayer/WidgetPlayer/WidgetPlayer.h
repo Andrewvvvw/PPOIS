@@ -19,9 +19,9 @@ public:
     void setCurrentAudio(std::shared_ptr<Audio> audio);
 
     [[nodiscard]] const Audio& getCurrentAudio() const;
-    [[nodiscard]] bool getIsPlaying() const { return isPlaying; }
-    [[nodiscard]] bool getIsMinimized() const { return isMinimized; }
-    [[nodiscard]] float getVolume() const { return volume; }
+    [[nodiscard]] bool getIsPlaying() const;
+    [[nodiscard]] bool getIsMinimized() const;
+    [[nodiscard]] float getVolume() const;
 };
 
 #endif // WIDGET_PLAYER_H

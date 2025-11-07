@@ -18,7 +18,7 @@ public:
     bool removePodcast(const std::shared_ptr<Podcast>& podcast);
     bool hasPodcast(const std::shared_ptr<Podcast>& podcast) const;
 
-    const std::vector<std::shared_ptr<Podcast>>& getPodcasts() const { return podcasts; }
+    const std::vector<std::shared_ptr<Podcast>>& getPodcasts() const;
 
 };
 

@@ -61,3 +61,19 @@ std::shared_ptr<AudioBook> BookAuthor::getBook(const std::string& title) const {
 
     return (it != publishedBooks.end()) ? *it : nullptr;
 }
+
+std::string BookAuthor::getUserType() const {
+    return "BookAuthor";
+}
+
+bool BookAuthor::canUploadContent() const {
+    return true;
+}
+
+std::string BookAuthor::getBiography() const {
+    return biography;
+}
+
+std::string BookAuthor::getPrimaryGenre() const {
+    return primaryGenre;
+}

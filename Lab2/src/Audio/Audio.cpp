@@ -9,3 +9,15 @@ Audio::Audio(unsigned long long duration, std::string name, unsigned long long c
         throw ExceptionIncorrectAudioName("Audio name can't be empty");
     this->duration = duration;
 }
+
+const std::string& Audio::getName() const {
+    return name;
+}
+
+unsigned long long Audio::getCoverID() const {
+    return coverID;
+}
+
+unsigned long long Audio::getDuration() const {
+    return duration;
+}

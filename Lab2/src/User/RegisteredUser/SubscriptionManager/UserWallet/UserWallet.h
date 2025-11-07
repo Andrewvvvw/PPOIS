@@ -3,7 +3,6 @@
 
 #include "../SubscriptionManager.h"
 #include "../../RegisteredUser.h"
-//#include "../Payment/Payment.h"
 
 constexpr double MONTHLY_PREMIUM_COST = 10;
 class Payment;
@@ -21,11 +20,11 @@ public:
     void addMoney(double amount);
     void removeMoney(double amount);
 
-    [[nodiscard]] double getBalance() const { return balance; }
-    void setBalance(double balance) { this->balance = balance; }
+    [[nodiscard]] double getBalance() const;
+    void setBalance(double balance);
 
     void payMonthlyPremium();
-    std::vector<std::shared_ptr<Payment> > getPayments() const { return payments; }
+    std::vector<std::shared_ptr<Payment> > getPayments() const;
 };
 
 #endif //LAB2_USERWALLET_H

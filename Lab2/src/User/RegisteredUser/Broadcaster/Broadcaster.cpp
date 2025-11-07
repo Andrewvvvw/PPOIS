@@ -67,3 +67,23 @@ std::shared_ptr<AudioBook> Broadcaster::getNarratedBook(const std::string& title
 
     return (it != narratedBooks.end()) ? *it : nullptr;
 }
+
+std::string Broadcaster::getUserType() const {
+    return "Broadcaster";
+}
+
+bool Broadcaster::canUploadContent() const {
+    return true;
+}
+
+std::string Broadcaster::getDisplayName() const {
+    return displayName;
+}
+
+std::string Broadcaster::getNarrationStyle() const {
+    return narrationStyle;
+}
+
+unsigned int Broadcaster::getYearsOfExperience() const {
+    return yearsOfExperience;
+}

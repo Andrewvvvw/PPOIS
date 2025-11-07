@@ -28,3 +28,15 @@ bool AudioUploader::validateFile(AudioFile audioFile) const {
 
     return audioFile.getFileSize() <= maxFileSizeKB;
 }
+
+const std::string& AudioUploader::getUploadDirectory() const {
+    return uploadDirectory;
+}
+
+size_t AudioUploader::getMaxFileSizeKB() const {
+    return maxFileSizeKB;
+}
+
+const std::vector<std::string>& AudioUploader::getAllowedFormats() const {
+    return allowedFormats;
+}

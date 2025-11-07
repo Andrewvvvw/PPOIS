@@ -12,15 +12,15 @@ public:
     Guest();
 
     time_t getSessionDuration() const;
-    unsigned int getViewLimit() const { return viewLimit; }
+    unsigned int getViewLimit() const;
 
-    std::string getUserType() const override { return "Guest"; }
-    bool canComment() const override { return false; }
+    std::string getUserType() const override;
+    bool canComment() const override;
 
     bool canViewContent() const;
     void incrementViewCount();
 
-    virtual bool getIsPremium() const override { return false; }
+    virtual bool getIsPremium() const override;
 };
 
 #endif // GUEST_H

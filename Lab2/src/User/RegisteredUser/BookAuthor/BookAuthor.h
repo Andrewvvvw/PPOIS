@@ -20,8 +20,8 @@ public:
               const std::string& email,
               const std::string& password);
 
-    std::string getBiography() const { return biography; }
-    std::string getPrimaryGenre() const { return primaryGenre; }
+    std::string getBiography() const;
+    std::string getPrimaryGenre() const;
 
     void updateBiography(const std::string& newBio);
     void updatePrimaryGenre(const std::string& genre);
@@ -32,8 +32,8 @@ public:
     std::vector<std::string> getPublishedTitles() const;
     std::shared_ptr<AudioBook> getBook(const std::string& title) const;
 
-    std::string getUserType() const override { return "BookAuthor"; }
-    bool canUploadContent() const override { return true; }
+    std::string getUserType() const override;
+    bool canUploadContent() const override;
 };
 
 #endif //BOOK_AUTHOR_H

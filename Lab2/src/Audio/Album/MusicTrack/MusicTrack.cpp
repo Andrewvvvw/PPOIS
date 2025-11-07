@@ -25,3 +25,8 @@ bool MusicTrack::isClassic() const {
 
     return (currentYear - releaseYear) >= CLASSIC_YEAR_THRESHOLD;
 }
+
+std::string MusicTrack::getAuthor() const { return artistName; }
+std::string MusicTrack::getGenre() const { return genre; }
+unsigned int MusicTrack::getReleaseYear() const { return releaseYear; }
+std::shared_ptr<SongWriter> MusicTrack::getSongWriter() const { return songWriter; }

@@ -110,7 +110,6 @@ SUITE(AudioLectureTest) {
 
     TEST(TestNullLecturer) {
         auto lecture = std::make_shared<AudioLecture>("Lecture 1", 1800, 2, nullptr, "Topic 1", "CS101");
-        // Don't call registerWithLecturer() when lecturer is null
 
                 CHECK_EQUAL("Unknown Lecturer", lecture->getAuthor());
                 CHECK(lecture->getLecturer() == nullptr);

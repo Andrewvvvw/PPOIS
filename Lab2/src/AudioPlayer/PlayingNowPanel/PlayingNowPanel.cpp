@@ -47,3 +47,19 @@ std::string PlayingNowPanel::getFormattedProgress() const {
 
     return formatTime(currentPos) + " / " + formatTime(totalDuration);
 }
+
+float PlayingNowPanel::getProgress() const {
+    return progress;
+}
+
+std::string PlayingNowPanel::getArtistName() const {
+    return artistName;
+}
+
+std::string PlayingNowPanel::getTrackName() const {
+    return trackName;
+}
+
+unsigned long long PlayingNowPanel::getCoverID() const {
+    return coverID;
+}

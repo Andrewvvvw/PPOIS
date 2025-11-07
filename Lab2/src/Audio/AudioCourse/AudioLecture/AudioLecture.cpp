@@ -63,3 +63,24 @@ std::string AudioLecture::getCurrentSlide() const {
     }
     return slides[currentSlide];
 }
+
+unsigned int AudioLecture::getSlideCount() const {
+    return slides.size();
+}
+
+std::vector<std::string> AudioLecture::getSlides() const {
+    return slides;
+}
+
+const std::shared_ptr<Lecturer>& AudioLecture::getLecturer() const {
+    return lecturer;
+}
+
+const std::string& AudioLecture::getTopic() const {
+    return topic;
+}
+
+const std::string& AudioLecture::getCourseCode() const {
+    return courseCode;
+}
+

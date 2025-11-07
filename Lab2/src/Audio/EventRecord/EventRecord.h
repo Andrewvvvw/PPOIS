@@ -17,9 +17,9 @@ public:
                 const std::shared_ptr<Artist>& artistPtr,
                 const std::string& eventDate);
 
-    std::string getEventName() const { return eventName; }
-    std::shared_ptr<Artist> getArtist() const { return artist; }
-    std::string getDate() const { return date; }
+    std::string getEventName() const;
+    std::shared_ptr<Artist> getArtist() const;
+    std::string getDate() const;
 
 };
 

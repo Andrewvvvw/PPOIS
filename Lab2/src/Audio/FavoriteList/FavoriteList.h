@@ -13,7 +13,7 @@ public:
 
     void addToFavorites(const std::shared_ptr <Audio>& audio);
     void removeFromFavorites(const std::shared_ptr<Audio>& audio);
-    [[nodiscard]] const std::vector < std::shared_ptr <Audio> > &getTracks() const { return tracks; }
+    [[nodiscard]] const std::vector < std::shared_ptr <Audio> > &getTracks() const;
 
 };
 

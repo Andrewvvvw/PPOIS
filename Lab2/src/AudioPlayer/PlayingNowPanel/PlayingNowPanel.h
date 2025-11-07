@@ -19,10 +19,10 @@ public:
     void updateTrackInfo(const std::shared_ptr<Audio>& audio);
     void setProgress(float newProgress);
     std::shared_ptr<Audio> getCurrentTrack() const;
-    float getProgress() const { return progress; }
-    std::string getArtistName() const { return artistName; }
-    std::string getTrackName() const { return trackName; }
-    unsigned long long getCoverID() const { return coverID; }
+    float getProgress() const;
+    std::string getArtistName() const;
+    std::string getTrackName() const;
+    unsigned long long getCoverID() const;
     std::string getFormattedProgress() const;
 };
 

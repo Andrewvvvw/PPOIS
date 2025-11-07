@@ -23,11 +23,11 @@ public:
                const std::string& courseCode,
                const std::string& description);
 
-    const std::string& getCourseCode() const { return courseCode; }
-    const std::string& getDescription() const { return description; }
-    const std::vector<std::string>& getLearningObjectives() const { return learningObjectives; }
-    const std::vector<std::string>& getPrerequisites() const { return prerequisites; }
-    std::vector <std::shared_ptr <AudioLecture> > getLectures() const { return lectures; }
+    const std::string& getCourseCode() const;
+    const std::string& getDescription() const;
+    const std::vector<std::string>& getLearningObjectives() const;
+    const std::vector<std::string>& getPrerequisites() const;
+    std::vector <std::shared_ptr <AudioLecture> > getLectures() const;
     std::string getAuthor() const override;
 
     bool addLecture(const std::shared_ptr<AudioLecture>& lecture);

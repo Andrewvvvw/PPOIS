@@ -54,3 +54,7 @@ std::shared_ptr<Audio> AudioPlayer::getCurrentTrack() const {
 float AudioPlayer::getPlaybackProgress() const {
     return currentProgress;
 }
+
+bool AudioPlayer::isCurrentlyPlaying() const {
+    return isPlaying;
+}

@@ -20,9 +20,9 @@ public:
                const std::string& originalTrackId,
                const std::string& remixStyle);
 
-    std::string getOriginalTrackId() const { return originalTrackId; }
-    std::string getRemixStyle() const { return remixStyle; }
-    std::string getRemixArtist() const { return remixArtist; }
+    std::string getOriginalTrackId() const;
+    std::string getRemixStyle() const;
+    std::string getRemixArtist() const;
 
     void updateRemixStyle(const std::string& newStyle);
 };

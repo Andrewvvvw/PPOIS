@@ -30,23 +30,23 @@ public:
                    const std::string& email, const std::string& password);
     ~RegisteredUser();
 
-    [[nodiscard]] std::string getPassword() const { return password; }
-    [[nodiscard]] std::string getEmail() const { return email; }
+    [[nodiscard]] std::string getPassword() const;
+    [[nodiscard]] std::string getEmail() const;
     void setEmail(const std::string& newEmail);
     void setPassword(const std::string& newPassword);
 
-    [[nodiscard]] bool canUploadContent() const override { return false; }
-    [[nodiscard]] bool canComment() const override { return true; }
-    [[nodiscard]] std::string getUserType() const override { return "RegisteredUser"; }
+    [[nodiscard]] bool canUploadContent() const override;
+    [[nodiscard]] bool canComment() const override;
+    [[nodiscard]] std::string getUserType() const override;
 
-    [[nodiscard]] SocialFunctionsManager* getSocialFunctionsManager() { return &socialFunctions; }
+    [[nodiscard]] SocialFunctionsManager* getSocialFunctionsManager();
 
     [[nodiscard]] virtual bool getIsPremium() const override;
     void setPremium(bool premium);
 
-    std::vector <std::shared_ptr<Audio> > getFavoriteTracks() { return this->favoriteList.getTracks(); }
-    void addToFavorites(const std::shared_ptr<Audio>& audio) { this->favoriteList.addToFavorites(audio); }
-    void removeFromFavorites(const std::shared_ptr<Audio>& audio) { this->favoriteList.removeFromFavorites(audio); }
+    std::vector <std::shared_ptr<Audio> > getFavoriteTracks();
+    void addToFavorites(const std::shared_ptr<Audio>& audio);
+    void removeFromFavorites(const std::shared_ptr<Audio>& audio);
 };
 
 #endif // REGISTERED_USER_H
