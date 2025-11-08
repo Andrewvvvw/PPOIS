@@ -1,6 +1,6 @@
 #include "AudioLecture.h"
 #include <algorithm>
-
+#include <memory>
 AudioLecture::AudioLecture(const std::string& title,
                            unsigned long long duration,
                            unsigned long long coverID,

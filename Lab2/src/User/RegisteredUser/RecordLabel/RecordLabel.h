@@ -4,7 +4,7 @@
 #include <string>
 #include "../Artist/Artist.h"
 #include "vector"
-#include "memory"
+#include <memory>
 
 class RecordLabel {
 private:

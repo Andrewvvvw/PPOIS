@@ -3,7 +3,7 @@
 
 #include "../../Audio.h"
 #include <string>
-
+#include <memory>
 class SongWriter;
 
 class MusicTrack : public Audio {

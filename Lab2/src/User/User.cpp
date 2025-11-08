@@ -47,6 +47,3 @@ AudioCollection* User::getAudioCollection() {
     return audioCollection.get();
 }
 
-const AudioCollection* User::getAudioCollection() const {
-    return audioCollection.get();
-}

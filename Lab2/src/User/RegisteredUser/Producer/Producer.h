@@ -4,7 +4,7 @@
 #include "../RegisteredUser.h"
 #include <vector>
 #include "../../../Audio/Album/MusicTrack/MusicTrack.h"
-
+#include <memory>
 class Producer : public RegisteredUser{
 private:
     std::string bio;

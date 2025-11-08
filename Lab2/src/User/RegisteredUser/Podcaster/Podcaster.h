@@ -5,7 +5,7 @@
 #include "../../../Audio/Podcast/Podcast.h"
 #include <vector>
 #include <string>
-
+#include <memory>
 class Podcaster : public RegisteredUser{
 private:
     std::string bio;

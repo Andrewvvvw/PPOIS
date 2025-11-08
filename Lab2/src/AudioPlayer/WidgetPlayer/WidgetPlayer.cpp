@@ -1,4 +1,6 @@
 #include "WidgetPlayer.h"
+#include <memory>
+#include <stdexcept>
 
 WidgetPlayer::WidgetPlayer()
     : isPlaying(false), isMinimized(false), volume(70.0f) {}

@@ -4,7 +4,7 @@
 #include "../AudioCollection.h"
 #include <vector>
 #include <string>
-
+#include <memory>
 class SearchEngine {
 private:
     const AudioCollection& collection;

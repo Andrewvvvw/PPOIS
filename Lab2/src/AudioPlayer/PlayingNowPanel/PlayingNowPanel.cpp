@@ -1,6 +1,8 @@
 #include "PlayingNowPanel.h"
 #include <iomanip>
 #include <sstream>
+#include <memory>
+#include <stdexcept>
 
 PlayingNowPanel::PlayingNowPanel()
     : coverID(0), progress(0) {}

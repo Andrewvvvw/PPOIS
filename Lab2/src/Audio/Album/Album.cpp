@@ -1,6 +1,7 @@
 #include "Album.h"
 #include <algorithm>
 #include "../../Exceptions/Exceptions.h"
+#include <memory>
 
 Album::Album(const std::string& title,
              const std::string& artist,

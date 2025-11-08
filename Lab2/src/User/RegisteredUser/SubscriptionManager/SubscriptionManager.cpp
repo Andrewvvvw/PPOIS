@@ -1,4 +1,5 @@
 #include "SubscriptionManager.h"
+#include <stdexcept>
 
 SubscriptionManager::SubscriptionManager(RegisteredUser* user, std::unique_ptr<UserWallet> wallet)
         : user(user), wallet(std::move(wallet)), hasPremium(false) {

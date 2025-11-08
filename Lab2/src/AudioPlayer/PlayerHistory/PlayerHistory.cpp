@@ -1,5 +1,5 @@
 #include "PlayerHistory.h"
-
+#include <memory>
 PlayerHistory::PlayerHistory()
     : maxHistorySize(100), currentPosition(0), isTrackingEnabled(true) {}
 

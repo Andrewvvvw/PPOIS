@@ -2,7 +2,7 @@
 #define WIDGET_PLAYER_H
 
 #include "../../Audio/Audio.h"
-
+#include <memory>
 class WidgetPlayer {
 private:
     std::shared_ptr<Audio> currentAudio;

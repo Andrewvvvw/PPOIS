@@ -2,6 +2,7 @@
 #include "AudioLecture/AudioLecture.h"
 #include <algorithm>
 #include <numeric>
+#include <memory>
 
 AudioCourse::AudioCourse(const std::string& title,
                        unsigned long long coverID,

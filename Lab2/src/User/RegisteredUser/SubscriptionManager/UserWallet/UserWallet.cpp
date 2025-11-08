@@ -1,7 +1,7 @@
 #include "UserWallet.h"
 #include "../../../../Exceptions/Exceptions.h"
 #include "../Payment/Payment.h"
-
+#include <memory>
 UserWallet::UserWallet(RegisteredUser* user, double balance) {
     this->user = user;
     this->balance = balance;

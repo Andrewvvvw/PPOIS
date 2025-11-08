@@ -2,6 +2,7 @@
 #include "map"
 #include "algorithm"
 #include "../Artist/Artist.h"
+#include <unordered_map>
 
 std::string UserStatistics::getFavoriteCreatorName(const RegisteredUser& user, const AudioCollection& audioCollection) {
     std::unordered_map<std::string, int> creatorCounts;
@@ -19,7 +20,8 @@ std::string UserStatistics::getFavoriteCreatorName(const RegisteredUser& user, c
         return "";
     }
 
-    auto maxPair = std::max_element(
+    std::unordered_map<std::string, int>::const_iterator maxPair;
+    maxPair = std::max_element(
             creatorCounts.begin(),
             creatorCounts.end(),
             [](const auto& a, const auto& b) {

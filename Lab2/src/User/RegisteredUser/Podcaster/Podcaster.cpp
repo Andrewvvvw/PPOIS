@@ -1,5 +1,5 @@
 #include "Podcaster.h"
-
+#include <memory>
 Podcaster::Podcaster(const std::string& id, const std::string& username,
                      const std::string& email, const std::string& password)
     : RegisteredUser(id, username, email, password) {}

@@ -1,6 +1,6 @@
 #include "Playlist.h"
 #include <algorithm>
-
+#include <memory>
 Playlist::Playlist(const std::string& name, const RegisteredUser& creator, bool isPublic)
         : name(name), creator(&creator), isPublic(isPublic), currentTrackIndex(0) {}
 

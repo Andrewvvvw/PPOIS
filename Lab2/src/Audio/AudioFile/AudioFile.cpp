@@ -8,7 +8,6 @@ AudioFile::AudioFile(const std::string& path, unsigned long size, const std::str
 bool AudioFile::validate() const {
 
     if (fileSize == 0) {
-        std::cerr << "Error: File size is 0" << std::endl;
         return false;
     }
 
@@ -22,7 +21,6 @@ bool AudioFile::validate() const {
     }
 
     if (!formatSupported) {
-        std::cerr << "Error: Unsupported audio format: " << format << std::endl;
         return false;
     }
 

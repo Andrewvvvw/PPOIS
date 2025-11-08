@@ -1,6 +1,6 @@
 #include "SocialFunctionsManager.h"
 #include "../RegisteredUser.h"
-
+#include <memory>
 SocialFunctionsManager::SocialFunctionsManager(RegisteredUser* user) : user(user) {}
 
 void SocialFunctionsManager::followUser(std::shared_ptr<RegisteredUser> userToFollow) {

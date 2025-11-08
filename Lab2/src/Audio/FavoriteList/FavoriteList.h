@@ -3,7 +3,7 @@
 
 #include "../Audio.h"
 #include <vector>
-
+#include <memory>
 class Audio;
 
 class FavoriteList {

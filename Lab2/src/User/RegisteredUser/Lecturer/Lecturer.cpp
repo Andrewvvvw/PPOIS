@@ -1,5 +1,5 @@
 #include "Lecturer.h"
-
+#include <memory>
 Lecturer::Lecturer(const std::string& id,
                    const std::string& username,
                    const std::string& email,

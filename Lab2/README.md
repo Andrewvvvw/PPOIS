@@ -1,112 +1,112 @@
-SleepTimer 3 8 → 
+SleepTimer 3 6 →
 
 SortEngine 2 2 →
 
-AudioCollection 3 3 → User AdManager Playlist
+AudioCollection 3 2 → User AdManager Playlist
 
-FilterEngine 5 4 → AudioCollection Playlist
+FilterEngine 5 2 → AudioCollection Playlist
 
-AudioSettings 4 8 → 
+AudioSettings 4 0 →
 
 FullScreenPlayer 5 3 → Audio
 
 PlayerHistory 4 4 → Audio
 
-PlayerQueue 4 10 → Audio
+PlayerQueue 4 4 → Audio
 
-PlayingNowPanel 5 7 → Audio
+PlayingNowPanel 5 2 → Audio
 
-PlayStatistics 3 4 → Audio
+PlayStatistics 3 3 → Audio
 
-WidgetPlayer 4 8 → Audio
+WidgetPlayer 4 2 → Audio
 
-AudioPlayer 6 8 → PlayerQueue PlayerHistory PlayingNowPanel AudioSettings Audio
+AudioPlayer 6 6 → PlayerQueue PlayerHistory PlayingNowPanel AudioSettings Audio
 
-User 4 10 → AudioCollection
+User 4 4  → AudioCollection
 
-RegisteredUser 6 13 → SocialFunctionsManager SubscriptionManager UserProfile User FavoriteList Audio
+RegisteredUser 6 8 → SocialFunctionsManager SubscriptionManager UserProfile User FavoriteList Audio
 
 UserStatistics 0 1 → RegisteredUser AudioCollection
 
-UserProfile 4 6 → RegisteredUser 
+UserProfile 4 0 → RegisteredUser
 
 SubscriptionManager 3 3 → RegisteredUser UserWallet
 
-UserWallet 3 6 → RegisteredUser Payment
+UserWallet 3 3 → RegisteredUser Payment
 
-Payment 2 0 → 
+Payment 2 0 →
 
-SongWriter 2 4 → MusicTrack
+SongWriter 2 3 → MusicTrack
 
-SocialFunctionsManager 4 7 → RegisteredUser Audio 
+SocialFunctionsManager 4 4 → RegisteredUser Audio
 
-RecordLabel 2 3 → Artist
+RecordLabel 2 2 → Artist
 
-RadioHost 3 7 → Radio
+RadioHost 3 2 → Radio
 
-Producer 2 4 → MusicTrack
+Producer 2 3 → MusicTrack
 
-Podcaster 2 4 → Podcast
+Podcaster 2 3 → Podcast
 
-Lecturer 3 6 → AudioLecture
+Lecturer 3 3 → AudioLecture
 
-Broadcaster 4 11 → AudioBook
+Broadcaster 4 5 → AudioBook
 
-BookAuthor 3 10 → AudioBook
+BookAuthor 3 5 → AudioBook
 
-Artist 5 12 → Album MusicTrack TrackRemix
+Artist 5 7 → Album MusicTrack TrackRemix
 
-Guest 2 7 →  
+Guest 2 4 →
 
 SearchEngine 1 2 → AudioCollection
 
-DownloadManager 3 3 → 
+DownloadManager 3 3 →
 
-CollectionStatistics 3 3 → AudioCollection
+CollectionStatistics 3 1 → AudioCollection
 
 AuthorizationManager 3 2 → RegisteredUser
 
-AudioUploader 3 5 → AudioFile
+AudioUploader 3 2 → AudioFile
 
-AdManager 2 4 → Advertisement User
+AdManager 2 3 → Advertisement User
 
-Advertisement 3 4 → 
+Advertisement 3 0 →
 
-Audio 3 5 →
+Audio 3 1 →
 
-Radio 3 8 → RadioHost
+Radio 3 1 → RadioHost
 
-Podcast 2 3 → Podcaster
+Podcast 2 1 → Podcaster
 
-Playlist 5 11 → Audio RegisteredUser
+Playlist 5 6 → Audio RegisteredUser
 
-FavoriteList 1 3 → Audio
+FavoriteList 1 2 → Audio
 
-EventRecord 3 3 → Artist
+EventRecord 3 0 → Artist
 
-AudioFile 3 4 → 
+AudioFile 3 1 →
 
-AudioCourse 5 14 → AudioLecture 
+AudioCourse 5 9 → AudioLecture
 
-AudioLecture 5 10 → Lecturer
+AudioLecture 5 5 → Lecturer
 
-AudioBook 4 10 → BookAuthor Broadcaster
+AudioBook 4 5 → BookAuthor Broadcaster
 
-Album 6 10 → MusicTrack TrackRemix
+Album 6 5 → MusicTrack TrackRemix
 
-MusicTrack 4 6 → SongWriter 
+MusicTrack 4 1 → SongWriter
 
-TrackRemix 3 4 → 
+TrackRemix 3 0 →
 
 Классы: 50
 Поля: 167
-Поведения: 297
+Поведения: 146
 Ассоциации: 62
 Исключения: 12
 
 Исключения:
 
-Exception 1 1 → 
+Exception 1 1 →
 
 ExceptionIncorrectYear 0 0 →
 

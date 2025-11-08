@@ -1,5 +1,5 @@
 #include "PlayerQueue.h"
-
+#include <memory>
 PlayerQueue::PlayerQueue()
     : currentIndex(0), isLooped(false), maxQueueSize(100) {}
 

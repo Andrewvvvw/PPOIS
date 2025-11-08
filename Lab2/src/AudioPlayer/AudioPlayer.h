@@ -6,7 +6,7 @@
 #include "PlayerQueue/PlayerQueue.h"
 #include "PlayerHistory/PlayerHistory.h"
 #include "PlayingNowPanel/PlayingNowPanel.h"
-
+#include <memory>
 class AudioPlayer {
 private:
     PlayerQueue queue;

@@ -1,6 +1,6 @@
 #include "SearchEngine.h"
 #include <algorithm>
-
+#include <memory>
 SearchEngine::SearchEngine(const AudioCollection& audioCollection)
     : collection(audioCollection) {}
 

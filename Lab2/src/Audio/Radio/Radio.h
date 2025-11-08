@@ -4,6 +4,7 @@
 #include "../Audio.h"
 #include "../../User/RegisteredUser/RadioHost/RadioHost.h"
 #include <string>
+#include <memory>
 
 class Radio: public Audio {
 private:

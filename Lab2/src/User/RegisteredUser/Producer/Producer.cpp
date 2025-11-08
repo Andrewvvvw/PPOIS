@@ -1,5 +1,5 @@
 #include "Producer.h"
-
+#include <memory>
 Producer::Producer(const std::string& id, const std::string& username,
                    const std::string& email, const std::string& password,
                    const std::string& bio)

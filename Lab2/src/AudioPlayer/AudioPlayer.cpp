@@ -1,6 +1,6 @@
 #include "AudioPlayer.h"
 #include <stdexcept>
-
+#include <memory>
 AudioPlayer::AudioPlayer()
         : isPlaying(false), currentProgress(0.0f) {}
 

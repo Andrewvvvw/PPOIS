@@ -1,5 +1,7 @@
 #include "AdManager.h"
 #include "algorithm"
+#include <stdexcept>
+#include <stdexcept>
 
 AdManager::AdManager(User& user) {
     this->advertisements = std::vector<Advertisement>();

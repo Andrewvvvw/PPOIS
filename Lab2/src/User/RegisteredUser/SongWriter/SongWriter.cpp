@@ -1,6 +1,6 @@
 #include "SongWriter.h"
 #include "../../../Audio/Album/MusicTrack/MusicTrack.h"
-
+#include <memory>
 SongWriter::SongWriter(const std::string &id,
                        const std::string &username,
                        const std::string &email,

@@ -1,5 +1,6 @@
 #include "Radio.h"
 #include <limits>
+#include <memory>
 
 Radio::Radio(std::string genre,
              std::string station,

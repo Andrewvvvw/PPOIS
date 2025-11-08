@@ -30,7 +30,6 @@ public:
     virtual bool getIsPremium() const;
 
     AudioCollection* getAudioCollection();
-    const AudioCollection* getAudioCollection() const;
 };
 
 #endif // USER_H

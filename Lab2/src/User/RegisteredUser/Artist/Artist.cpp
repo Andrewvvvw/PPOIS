@@ -4,7 +4,7 @@
 #include "../../../Audio/Album/MusicTrack/MusicTrack.h"
 #include "../RegisteredUser.h"
 #include "../../../Audio/Album/Album.h"
-
+#include <memory>
 Artist::Artist(const std::string& id,
                const std::string& username,
                const std::string& email,

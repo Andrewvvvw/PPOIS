@@ -1,5 +1,5 @@
 #include "RecordLabel.h"
-
+#include <memory>
 RecordLabel::RecordLabel(const std::string& name) : name(name) {}
 
 void RecordLabel::addArtist(const std::shared_ptr<Artist>& artist) {

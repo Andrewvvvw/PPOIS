@@ -3,7 +3,7 @@
 
 #include "../SubscriptionManager.h"
 #include "../../RegisteredUser.h"
-
+#include <memory>
 constexpr double MONTHLY_PREMIUM_COST = 10;
 class Payment;
 

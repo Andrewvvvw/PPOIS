@@ -1,6 +1,6 @@
 #include "EventRecord.h"
 #include <iostream>
-
+#include <memory>
 
 EventRecord::EventRecord(const std::string& name,
                          const std::shared_ptr<Artist>& artistPtr,

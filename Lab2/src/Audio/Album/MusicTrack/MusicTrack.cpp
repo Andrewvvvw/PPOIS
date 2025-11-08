@@ -1,7 +1,7 @@
 #include "MusicTrack.h"
 #include "../../../User/RegisteredUser/SongWriter/SongWriter.h"
 #include <ctime>
-
+#include <memory>
 MusicTrack::MusicTrack(const std::string& name,
                        unsigned long long duration,
                        unsigned long long coverID,
