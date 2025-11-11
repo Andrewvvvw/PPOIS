@@ -1,5 +1,5 @@
 cmake-build-debug/
-cmake-build-coverage/
+build-cov/
 build/
 unittest-cpp/
 
